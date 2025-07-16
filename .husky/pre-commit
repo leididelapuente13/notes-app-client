@@ -1,2 +1,4 @@
 npm run prettier:check
 npm run lint
+
+# npm run test:ci # Uncomment when start testing

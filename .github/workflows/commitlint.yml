@@ -33,3 +33,71 @@ jobs:
       - name: Validate PR commits with commitlint
         if: github.event_name == 'pull_request'
         run: npx commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+  # Uncomment these jobs when you start testing
+  # lint:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Setup node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: lts/*
+  #         cache: npm
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: Run linting
+  #       run: npm run lint
+  #     - name: Check formatting
+  #       run: npm run prettier:check
+
+  # test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Setup node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: lts/*
+  #         cache: npm
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: Run tests
+  #       run: npm run test:ci
+  #     - name: Upload coverage reports
+  #       uses: codecov/codecov-action@v3
+  #       if: always()
+
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Setup node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: lts/*
+  #         cache: npm
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: Build application
+  #       run: npm run build
+  #     - name: Upload build artifacts
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: build-files
+  #         path: dist/
+
+  # e2e:
+  #   runs-on: ubuntu-latest
+  #   # needs: [lint, test, build]  # Uncomment to run e2e only after other jobs pass
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - name: Setup node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: lts/*
+  #         cache: npm
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: Run e2e tests
+  #       run: npm run e2e

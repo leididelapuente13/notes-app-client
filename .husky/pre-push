@@ -1,0 +1,5 @@
+# npm run test:ci # Uncomment when start testing
+
+# npm run build # Uncomment to ensure build passes before push
+
+# npm run e2e # Uncomment for e2e tests
