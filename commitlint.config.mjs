@@ -2,7 +2,7 @@ export default {
   extends: ["@commitlint/config-conventional"],
   parserPreset: "conventional-changelog-conventionalcommits",
   rules: {
-    "subject-case": [0], // Disable subject case enforcement
+    "subject-case": [0],
   },
   prompt: {
     settings: {},

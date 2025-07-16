@@ -16,23 +16,79 @@ Your challenge is to build out this note-taking web app and get it looking as cl
 
 You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
-Your users should be able to:
+Project setup
+  - tailwind variables: colors, fonts, spacing, radius, shadow, 
 
+Layout components
+  - logo
+  - header
+  - header control
+  - menu bar
+  - sidebar notes
+  - sidebar navigation
+  - sidebar settings menu
+  - sidebar right menu
+  - 404 component
+
+UI components 
+  - buttons
+  - modals
+  - icons
+  - input
+  - toast
+  - loading bar
+  - loadingt spinner
+  - empty state
+  - pagination
+
+Your users should be able to:
 - Create, read, update, and delete notes
+  - service for notes
+  - page component for creating or editing notes
+  - form validations
 - Archive notes
+  - service for archive notes?
 - View all their notes
+  - page component
+  - list component
+  - note card
 - View all archived notes
+  - page component
 - View notes with specific tags
+  - page component
 - Search notes by title, tag, and content
+  - search component
 - Select their color theme
+  - component
+  - theme service 
+  - dark mode styles
+  - light mode styles
+  - get device default theme
+  - get local store theme
 - Select their font theme
-- Receive validation messages if required form fields aren't completed
-- Navigate the whole app and perform all actions using only their keyboard
-- View the optimal layout for the interface depending on their device's screen size
+  - component
+  - font service
+  - toggle font family
+  - get local store theme
+- Create an account, log in, sign out, change password
+  - auth service
+  - auth with auth0
+  - login page
+  - signup page
+  - http interceptor
+  - guard
+- Reset their password 
+  - change password component
+  - reset password component
+  - email template for reset password link
+- Forgot password 
+  - forgot password component
 - See hover and focus states for all interactive elements on the page
-- **Bonus**: Save details to a database (build the project as a full-stack app)
-- **Bonus**: Create an account, log in, change password (add user authentication to the full-stack app)
-- **Bonus**: Reset their password (add password reset to the full-stack app)
+- View the optimal layout for the interface depending on their device's screen size
+- Receive validation messages if required form fields aren't completed
+
+- Save details to a database (build the project as a full-stack app)
+- Navigate the whole app and perform all actions using only their keyboard
 
 Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
 
