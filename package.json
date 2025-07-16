@@ -10,8 +10,8 @@
     "lint": "ng lint",
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "prepare": "husky install",
-    "commitlint": "commitlint --edit"
+    "prepare": "husky",
+    "commitlint": "commitlint --from HEAD~1 --to HEAD --verbose"
   },
   "prettier": {
     "overrides": [
@@ -43,6 +43,7 @@
     "@angular/compiler-cli": "^20.1.0",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/prompt-cli": "^19.8.1",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "20.1.1",
     "eslint": "^9.29.0",
