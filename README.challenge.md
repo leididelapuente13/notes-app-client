@@ -17,31 +17,35 @@ Your challenge is to build out this note-taking web app and get it looking as cl
 You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
 
 Project setup
-  - tailwind variables: colors, fonts, spacing, radius, shadow, 
+
+- tailwind variables: colors, fonts, spacing, radius, shadow,
 
 Layout components
-  - logo
-  - header
-  - header control
-  - menu bar
-  - sidebar notes
-  - sidebar navigation
-  - sidebar settings menu
-  - sidebar right menu
-  - 404 component
 
-UI components 
-  - buttons
-  - modals
-  - icons
-  - input
-  - toast
-  - loading bar
-  - loadingt spinner
-  - empty state
-  - pagination
+- logo
+- header
+- header control
+- menu bar
+- sidebar notes
+- sidebar navigation
+- sidebar settings menu
+- sidebar right menu
+- 404 component
+
+UI components
+
+- buttons
+- modals
+- icons
+- input
+- toast
+- loading bar
+- loadingt spinner
+- empty state
+- pagination
 
 Your users should be able to:
+
 - Create, read, update, and delete notes
   - service for notes
   - page component for creating or editing notes
@@ -60,7 +64,7 @@ Your users should be able to:
   - search component
 - Select their color theme
   - component
-  - theme service 
+  - theme service
   - dark mode styles
   - light mode styles
   - get device default theme
@@ -77,11 +81,11 @@ Your users should be able to:
   - signup page
   - http interceptor
   - guard
-- Reset their password 
+- Reset their password
   - change password component
   - reset password component
   - email template for reset password link
-- Forgot password 
+- Forgot password
   - forgot password component
 - See hover and focus states for all interactive elements on the page
 - View the optimal layout for the interface depending on their device's screen size
