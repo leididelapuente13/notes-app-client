@@ -7,7 +7,6 @@
     "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 
-  /*Colors*/
   --color-neutral-950: #0e121b;
   --color-neutral-900: #191b25;
   --color-neutral-800: #232530;
@@ -31,7 +30,6 @@
   --color-red-500: #fb3748;
   --color-red-100: #ffd5d8;
 
-  /*Text*/
   --text-preset-1: 1.5rem;
   --text-preset-1-line-height: 1.2;
   --text-preset-1-tracking: -0.03125rem;
@@ -62,7 +60,6 @@
   --text-preset-6-tracking: -0.0125rem;
   --text-preset-6-font-weight: 400;
 
-  /*Spacing*/
   --spacing-0: 0;
   --spacing-025: 2px;
   --spacing-050: 4px;
@@ -78,7 +75,6 @@
   --spacing-800: 64px;
   --spacing-1000: 80px;
 
-  /*Radius*/
   --radius-0: 0;
   --radius-4: 4px;
   --radius-6: 6px;
@@ -90,12 +86,10 @@
   --radius-24: 24px;
   --radius-full: 999px;
 
-  /*Shadows*/
   --shadow-small: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   --shadow-large: 0px 8px 24px 0px rgba(16, 24, 40, 0.18);
 }
 
-/*Font families*/
 @font-face {
   font-family: "Inter";
   src: url("/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf")
