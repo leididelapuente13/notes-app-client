@@ -10,5 +10,9 @@
   "printWidth": 150,
   "endOfLine": "auto",
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindStylesheet": "./src/styles.scss"
+  "tailwindStylesheet": "./src/styles.scss",
+  "tailwindConfig": "./tailwind.config.ts",
+  "tailwindFunctions": ["clsx", "cn", "tw"],
+  "tailwindPreserveWhitespace": true,
+  "tailwindPreserveDuplicates": false
 }
