@@ -113,3 +113,45 @@
   font-weight: 200 900;
   font-display: swap;
 }
+
+.text-preset-1 {
+  font-size: var(--text-preset-1);
+  font-weight: var(--text-preset-1-font-weight);
+  letter-spacing: var(--text-preset-1-tracking);
+  line-height: var(--text-preset-1-line-height);
+}
+
+.text-preset-2 {
+  font-size: var(--text-preset-2);
+  font-weight: var(--text-preset-2-font-weight);
+  letter-spacing: var(--text-preset-2-tracking);
+  line-height: var(--text-preset-2-line-height);
+}
+
+.text-preset-3 {
+  font-size: var(--text-preset-3);
+  font-weight: var(--text-preset-3-font-weight);
+  letter-spacing: var(--text-preset-3-tracking);
+  line-height: var(--text-preset-3-line-height);
+}
+
+.text-preset-4 {
+  font-size: var(--text-preset-4);
+  font-weight: var(--text-preset-4-font-weight);
+  letter-spacing: var(--text-preset-4-tracking);
+  line-height: var(--text-preset-4-line-height);
+}
+
+.text-preset-5 {
+  font-size: var(--text-preset-5);
+  font-weight: var(--text-preset-5-font-weight);
+  letter-spacing: var(--text-preset-5-tracking);
+  line-height: var(--text-preset-5-line-height);
+}
+
+.text-preset-6 {
+  font-size: var(--text-preset-6);
+  font-weight: var(--text-preset-6-font-weight);
+  letter-spacing: var(--text-preset-6-tracking);
+  line-height: var(--text-preset-6-line-height);
+}
