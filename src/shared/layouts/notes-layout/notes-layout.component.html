@@ -1,0 +1,17 @@
+<div>
+  <aside
+    class="border-solid border-r border-neutral-200 dark:border-neutral-200/30 w-[272px] min-h-screen fixed left-0 top-0 z-10"
+  ></aside>
+  <app-header />
+</div>
+<main class="h-screen ml-[272px] flex">
+  <aside
+    class="w-[290px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30"
+  ></aside>
+  <section class="w-[588px]">
+    <router-outlet />
+  </section>
+  <aside
+    class="w-[258px] border-solid border-l border-neutral-200 dark:border-neutral-200/30"
+  ></aside>
+</main>
