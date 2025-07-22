@@ -88,6 +88,8 @@
 
   --shadow-small: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   --shadow-large: 0px 8px 24px 0px rgba(16, 24, 40, 0.18);
+
+  --sidebar-width: 272px;
 }
 
 @font-face {

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { SectionTitleComponent } from '../../ui/title/title.component';
 import { SettingsIconComponent } from '../../ui/icons/settings-icon/settings-icon.component';
+import { LogoComponent } from '../../ui/logo/logo.component';
 
 @Component({
   selector: 'app-header',
-  imports: [SectionTitleComponent, SettingsIconComponent],
+  imports: [SectionTitleComponent, SettingsIconComponent, LogoComponent],
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {}

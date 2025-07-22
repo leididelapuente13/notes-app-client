@@ -1,0 +1,22 @@
+<div>
+  <aside
+    class="hidden lg:block border-solid border-r border-neutral-200 dark:border-neutral-200/30 w-(--sidebar-width) min-h-screen fixed left-0 top-0 z-10"
+  >
+    <nav></nav>
+  </aside>
+  <app-header />
+</div>
+<main class="h-screen ml-(--sidebar-width) flex flex-col lg:flex-row">
+  <aside
+    class="hidden lg:block w-[290px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30"
+  ></aside>
+  <section class="w-screen lg:w-[588px]">
+    <router-outlet />
+  </section>
+  <aside
+    class="hidden lg:block w-[258px] border-solid border-l border-neutral-200 dark:border-neutral-200/30"
+  ></aside>
+</main>
+<nav
+  class="h-14 border-t border-solid border-neutral-800 shadow-sm md:h-[74px] w-screen lg:hidden"
+></nav>
