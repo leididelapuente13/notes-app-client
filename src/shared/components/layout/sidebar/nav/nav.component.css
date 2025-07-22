@@ -1,0 +1,4 @@
+.active {
+  background-color: var(--color-neutral-800);
+  border-radius: var(--radius-lg);
+}
