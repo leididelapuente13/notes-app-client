@@ -1,10 +1,12 @@
 import { NgComponentOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { IconArchiveComponent } from 'src/shared/components/ui/icons/icon-archived/icon-archive.component';
-import { IconHomeComponent } from 'src/shared/components/ui/icons/icon-home/icon-home.component';
-import { Link } from 'src/shared/interfaces/ui/link.interface';
-import { IconArrowRightComponent } from 'src/shared/components/ui/icons/icon-arrow-right/icon-arrow-right.component';
+import {
+  IconArchiveComponent,
+  IconHomeComponent,
+  IconArrowRightComponent,
+} from '@shared/components/ui/icons';
+import { Link } from '@shared/interfaces';
 
 @Component({
   selector: 'app-nav',
@@ -24,7 +26,7 @@ import { IconArrowRightComponent } from 'src/shared/components/ui/icons/icon-arr
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavComponent {
-  notesRoutes: Link[] = [
+  routes: Link[] = [
     {
       label: 'All Notes',
       path: 'all',
