@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-title',
+  selector: 'app-icon-archived',
   imports: [],
-  templateUrl: './title.component.html',
+  templateUrl: './icon-archive.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SectionTitleComponent {
-  title = input.required<string>();
+export class IconArchiveComponent {
+  active = input<boolean>(false);
 }

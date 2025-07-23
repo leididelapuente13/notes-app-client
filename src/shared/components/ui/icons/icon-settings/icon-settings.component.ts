@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-logo',
+  selector: 'app-icon-settings',
   imports: [],
-  templateUrl: './logo.component.html',
+  templateUrl: './icon-settings.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LogoComponent {}
+export class IconSettingsComponent {}
