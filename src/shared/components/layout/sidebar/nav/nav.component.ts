@@ -1,5 +1,5 @@
 import { NgComponentOutlet } from '@angular/common';
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IconArchiveComponent } from 'src/shared/components/ui/icons/icon-archived/icon-archive.component';
 import { IconHomeComponent } from 'src/shared/components/ui/icons/icon-home/icon-home.component';
@@ -15,7 +15,13 @@ import { IconArrowRightComponent } from 'src/shared/components/ui/icons/icon-arr
     IconArrowRightComponent,
   ],
   templateUrl: './nav.component.html',
-  styleUrl: './nav.component.css',
+  styles: `
+    .active {
+      background-color: var(--color-neutral-800);
+      border-radius: var(--radius-lg);
+    }
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavComponent {
   notesRoutes: Link[] = [
