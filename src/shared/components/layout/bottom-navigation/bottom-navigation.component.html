@@ -1,0 +1,12 @@
+<nav
+  class="h-14 px-8 py-3 border-t border-solid border-neutral-800 shadow-sm md:h-[74px] lg:hidden"
+>
+  <ul class="flex justify-between md:gap-[37.5px]">
+    @for (item of routes; track $index) {
+      <app-navigation-item [item]="item" />
+      @if (!$last) {
+        <span class="border border-neutral-600"></span>
+      }
+    }
+  </ul>
+</nav>
