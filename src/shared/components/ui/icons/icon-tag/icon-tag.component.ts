@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-icon-settings',
+  selector: 'app-icon-tag',
   imports: [],
-  templateUrl: './icon-settings.component.html',
+  templateUrl: './icon-tag.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconSettingsComponent {
+export class IconTagComponent {
   active = input<boolean>(false);
 }

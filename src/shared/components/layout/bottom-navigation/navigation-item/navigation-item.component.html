@@ -1,0 +1,23 @@
+<li
+  [class.bg-blue-50]="rla.isActive"
+  [class.dark:bg-neutral-700]="rla.isActive"
+  [class.rounded]="rla.isActive"
+  class="h-8 px-[19.1px] py-1 text-preset-6 md:w-[80px] md:h-[50px]"
+>
+  <a
+    [routerLink]="
+      item().isAbsolute ? '/' + item().path : '/notes/' + item().path
+    "
+    routerLinkActive="active"
+    #rla="routerLinkActive"
+    class="flex flex-col gap-1 items-center text-center"
+  >
+    <ng-container
+      [ngComponentOutlet]="item().icon"
+      [ngComponentOutletInputs]="{ active: rla.isActive }"
+    ></ng-container>
+    <span class="hidden text-neutral-400 md:block">
+      {{ item().label }}
+    </span>
+  </a>
+</li>

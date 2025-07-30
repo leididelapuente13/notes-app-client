@@ -1,11 +1,19 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from 'src/shared/components/layout/header/header.component';
-import { SidebarComponent } from 'src/shared/components/layout/sidebar/sidebar.component';
+import {
+  BottomNavigationComponent,
+  HeaderComponent,
+  SidebarComponent,
+} from '@shared/components';
 
 @Component({
   selector: 'app-notes-layout',
-  imports: [HeaderComponent, RouterOutlet, SidebarComponent],
+  imports: [
+    HeaderComponent,
+    RouterOutlet,
+    SidebarComponent,
+    BottomNavigationComponent,
+  ],
   templateUrl: './notes-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
