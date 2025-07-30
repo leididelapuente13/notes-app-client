@@ -6,7 +6,11 @@
   viewBox="0 0 24 24"
 >
   <path
-    class="stroke-neutral-400"
+    [class]="
+      active()
+        ? 'stroke-blue-500'
+        : 'stroke-neutral-950 dark:stroke-neutral-400'
+    "
     stroke="#0E121B"
     stroke-linecap="round"
     stroke-linejoin="round"
