@@ -4,9 +4,9 @@
   height="24"
   fill="none"
   viewBox="0 0 24 24"
-  [class]="
-    active() ? 'stroke-blue-500' : 'stroke-neutral-950 dark:stroke-neutral-400'
-  "
+  [class.stroke-blue-500]="active()"
+  [class.stroke-neutral-950]="!active()"
+  [class.dark:stroke-neutral-400]="!active()"
 >
   <path
     stroke-linecap="round"

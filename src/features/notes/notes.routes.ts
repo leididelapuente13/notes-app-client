@@ -1,0 +1,38 @@
+import { Routes } from '@angular/router';
+import TemporalComponentComponent from './components/temporal-component/temporal-component.component';
+import { NotesLayoutComponent } from '@shared/layouts/notes-layout/notes-layout.component';
+
+const notesRouter: Routes = [
+  {
+    path: 'notes',
+    component: NotesLayoutComponent,
+    children: [
+      {
+        path: 'all',
+        loadComponent: () => TemporalComponentComponent,
+      },
+      {
+        path: 'archived',
+        loadComponent: () => TemporalComponentComponent,
+      },
+      {
+        path: 'details',
+        loadComponent: () => TemporalComponentComponent,
+      },
+      {
+        path: 'form',
+        loadComponent: () => TemporalComponentComponent,
+      },
+      {
+        path: 'search',
+        loadComponent: () => TemporalComponentComponent,
+      },
+      {
+        path: 'tags',
+        loadComponent: () => TemporalComponentComponent,
+      },
+    ],
+  },
+];
+
+export default notesRouter;

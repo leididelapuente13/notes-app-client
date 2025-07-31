@@ -6,11 +6,9 @@
   viewBox="0 0 24 24"
 >
   <path
-    [class]="
-      active()
-        ? 'stroke-blue-500'
-        : 'stroke-neutral-950 dark:stroke-neutral-400'
-    "
+    [class.stroke-blue-500]="active()"
+    [class.stroke-neutral-950]="!active()"
+    [class.dark:stroke-neutral-400]="!active()"
     stroke="#0E121B"
     stroke-linecap="round"
     stroke-linejoin="round"
@@ -19,7 +17,9 @@
     clip-rule="evenodd"
   />
   <path
-    class="stroke-neutral-400"
+    [class.stroke-blue-500]="active()"
+    [class.stroke-neutral-950]="!active()"
+    [class.dark:stroke-neutral-400]="!active()"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="1.8"

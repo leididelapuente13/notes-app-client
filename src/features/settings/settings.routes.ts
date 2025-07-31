@@ -2,30 +2,26 @@ import { Routes } from '@angular/router';
 import TemporalComponentComponent from '@features/notes/components/temporal-component/temporal-component.component';
 import { NotesLayoutComponent } from '@shared/layouts/notes-layout/notes-layout.component';
 
-const authRoutes: Routes = [
+const settingsRouter: Routes = [
   {
-    path: 'auth',
-    // TODO: Replace for auth layout
+    path: 'settings',
+    // TODO: Replace for config layout
     component: NotesLayoutComponent,
     children: [
       {
-        path: 'login',
+        path: 'theme',
         loadComponent: () => TemporalComponentComponent,
       },
       {
-        path: 'signup',
+        path: 'font',
         loadComponent: () => TemporalComponentComponent,
       },
       {
-        path: 'forgot-password',
-        loadComponent: () => TemporalComponentComponent,
-      },
-      {
-        path: 'reset-password',
+        path: 'change-password',
         loadComponent: () => TemporalComponentComponent,
       },
     ],
   },
 ];
 
-export default authRoutes;
+export default settingsRouter;
