@@ -1,16 +1,16 @@
 <div class="flex h-screen">
   <app-sidebar />
-  <div class="flex flex-col flex-1">
+  <div class="flex flex-col flex-1 lg:ml-[var(--sidebar-width)]">
     <app-header />
-    <main class="flex-1 lg:ml-(--sidebar-width) flex flex-col lg:flex-row">
+    <main class="flex-1 flex flex-col lg:flex-row overflow-hidden">
       <aside
-        class="hidden lg:block w-[290px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30"
+        class="hidden lg:block lg:w-[290px] xl:w-[290px] pl-[32px] pr-[16px] pt-[20px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30 overflow-y-auto flex-shrink-0"
       ></aside>
-      <section class="lg:w-[588px]">
+      <section class="flex-1 lg:w-[588px] xl:w-[40%] overflow-y-auto">
         <router-outlet />
       </section>
       <aside
-        class="hidden lg:block w-[258px] border-solid border-l border-neutral-200 dark:border-neutral-200/30"
+        class="hidden xl:block w-[258px] border-solid border-l border-neutral-200 dark:border-neutral-200/30 overflow-y-auto flex-shrink-0"
       ></aside>
     </main>
     <app-bottom-navigation />
