@@ -14,7 +14,9 @@
     clip-rule="evenodd"
   />
   <path
-    class="dark:fill-neutral-400"
+    [class]="
+      active() ? 'fill-blue-500' : 'fill-neutral-950 dark:fill-neutral-400'
+    "
     fill-rule="evenodd"
     d="m16.736 15.648 5.616 5.6-1.06 1.063-5.615-5.601 1.06-1.062Z"
     clip-rule="evenodd"
