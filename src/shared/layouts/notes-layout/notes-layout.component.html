@@ -1,16 +1,18 @@
-<div class="bg-white">
+<div class="flex h-screen">
   <app-sidebar />
-  <app-header />
+  <div class="flex flex-col flex-1">
+    <app-header />
+    <main class="flex-1 lg:ml-(--sidebar-width) flex flex-col lg:flex-row">
+      <aside
+        class="hidden lg:block w-[290px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30"
+      ></aside>
+      <section class="lg:w-[588px]">
+        <router-outlet />
+      </section>
+      <aside
+        class="hidden lg:block w-[258px] border-solid border-l border-neutral-200 dark:border-neutral-200/30"
+      ></aside>
+    </main>
+    <app-bottom-navigation />
+  </div>
 </div>
-<main class="h-screen lg:ml-(--sidebar-width) flex flex-col lg:flex-row">
-  <aside
-    class="hidden lg:block w-[290px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30"
-  ></aside>
-  <section class="lg:w-[588px]">
-    <router-outlet />
-  </section>
-  <aside
-    class="hidden lg:block w-[258px] border-solid border-l border-neutral-200 dark:border-neutral-200/30"
-  ></aside>
-</main>
-<app-bottom-navigation />
