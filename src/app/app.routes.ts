@@ -7,7 +7,7 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'auth/login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   ...authRoutes,
   ...notesRouter,
