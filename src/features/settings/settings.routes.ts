@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
 import TemporalComponentComponent from '@features/notes/components/temporal-component/temporal-component.component';
-import { NotesLayoutComponent } from '@shared/layouts/notes-layout/notes-layout.component';
+import { SettingsLayoutComponent } from '@shared/layouts/settings-layout/settings-layout.component';
 
 const settingsRouter: Routes = [
   {
     path: 'settings',
-    // TODO: Replace for config layout
-    component: NotesLayoutComponent,
+    component: SettingsLayoutComponent,
     children: [
       {
         path: 'theme',
