@@ -16,4 +16,5 @@ import { Link } from '@shared/interfaces';
 })
 export class NavItemComponent {
   item = input.required<Link>();
+  paddingSize = input.required<'sm' | 'md'>();
 }
