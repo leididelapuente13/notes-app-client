@@ -4,3 +4,7 @@ export * from './icon-home/icon-home.component';
 export * from './icon-settings/icon-settings.component';
 export * from './icon-search/icon-search.component';
 export * from './icon-tag/icon-tag.component';
+export * from './icon-font/icon-font.component';
+export * from './icon-lock/icon-lock.component';
+export * from './icon-logout/icon-logout.component';
+export * from './icon-sun/icon-sun.component';
