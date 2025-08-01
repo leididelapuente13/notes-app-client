@@ -4,7 +4,7 @@ import {
   IconHomeComponent,
 } from '@shared/components/ui/icons';
 import { Link } from '@shared/interfaces';
-import { NavItemComponent } from "./nav-item/nav-item.component";
+import { NavItemComponent } from './nav-item/nav-item.component';
 
 @Component({
   selector: 'app-nav',
