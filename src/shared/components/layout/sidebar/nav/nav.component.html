@@ -1,28 +1,7 @@
-<nav class="text-neutral-200">
+<nav>
   <ul class="flex flex-col w-full gap-2">
     @for (item of routes; track $index) {
-      <li class="min-h-10 w-full">
-        <a
-          routerLinkActive="active"
-          #rla="routerLinkActive"
-          [routerLink]="`/notes/${item.path}`"
-          class="w-full text-preset-4"
-        >
-          <span
-            class="flex items-center gap-2 py-2.5 px-3"
-            [class.active]="rla.isActive"
-          >
-            <ng-container
-              [ngComponentOutlet]="item.icon"
-              [ngComponentOutletInputs]="{ active: rla.isActive }"
-            ></ng-container>
-            <p class="my-auto">{{ item.label }}</p>
-            @if (rla.isActive) {
-              <app-icon-arrow-right class="block ml-auto" />
-            }
-          </span>
-        </a>
-      </li>
+      <app-nav-item [item]="item" />
     }
   </ul>
 </nav>

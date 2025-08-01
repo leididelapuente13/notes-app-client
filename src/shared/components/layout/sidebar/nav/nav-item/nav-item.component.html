@@ -1,0 +1,25 @@
+<li
+  class="min-h-10 w-full text-neutral-200 rounded-8"
+  [class.bg-neutral-800]="rla.isActive"
+>
+  <a
+    routerLinkActive="active"
+    #rla="routerLinkActive"
+    [routerLink]="item().path"
+    class="w-full text-preset-4"
+  >
+    <span
+      class="flex items-center gap-2 py-2.5 px-3"
+      [class.active]="rla.isActive"
+    >
+      <ng-container
+        [ngComponentOutlet]="item().icon"
+        [ngComponentOutletInputs]="{ active: rla.isActive }"
+      ></ng-container>
+      <p class="my-auto">{{ item().label }}</p>
+      @if (rla.isActive) {
+        <app-icon-arrow-right class="block ml-auto" />
+      }
+    </span>
+  </a>
+</li>
