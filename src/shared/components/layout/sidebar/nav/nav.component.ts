@@ -1,21 +1,14 @@
-import { NgComponentOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 import {
   IconArchiveComponent,
   IconHomeComponent,
-  IconArrowRightComponent,
 } from '@shared/components/ui/icons';
 import { Link } from '@shared/interfaces';
+import { NavItemComponent } from "./nav-item/nav-item.component";
 
 @Component({
   selector: 'app-nav',
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-    NgComponentOutlet,
-    IconArrowRightComponent,
-  ],
+  imports: [NavItemComponent],
   templateUrl: './nav.component.html',
   styles: `
     .active {
@@ -29,12 +22,12 @@ export class NavComponent {
   routes: Link[] = [
     {
       label: 'All Notes',
-      path: 'all',
+      path: '/notes/all',
       icon: IconHomeComponent,
     },
     {
       label: 'Archived Notes',
-      path: 'archived',
+      path: '/notes/archived',
       icon: IconArchiveComponent,
     },
   ];
