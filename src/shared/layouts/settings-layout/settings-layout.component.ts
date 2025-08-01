@@ -5,6 +5,7 @@ import {
   HeaderComponent,
   SidebarComponent,
 } from '@shared/components';
+import { SettingsSidebarComponent } from '@features/settings/components';
 
 @Component({
   selector: 'app-settings-layout',
@@ -13,6 +14,7 @@ import {
     RouterOutlet,
     HeaderComponent,
     SidebarComponent,
+    SettingsSidebarComponent,
   ],
   templateUrl: './settings-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
