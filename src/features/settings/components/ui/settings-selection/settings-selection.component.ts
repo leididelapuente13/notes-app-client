@@ -2,7 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   input,
-  output,
+  signal,
 } from '@angular/core';
 import { Selection } from '@shared/interfaces';
 import { SettingsSelectionCardComponent } from './settings-selection-card/settings-selection-card.component';
@@ -16,5 +16,9 @@ import { SettingsSelectionCardComponent } from './settings-selection-card/settin
 export class SettingsSelectionComponent<T> {
   settingsSelectionCardComponent = new SettingsSelectionCardComponent<T>();
   readonly selections = input.required<Selection<T>[]>();
-  readonly currentSelection = output<T>();
+  currentSelection = signal<T | null>(null);
+
+  updateCurrentSelection(selection: T) {
+    this.currentSelection.set(selection);
+  }
 }
