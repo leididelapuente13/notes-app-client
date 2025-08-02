@@ -3,7 +3,7 @@
   tabindex="0"
   role="button"
   (click)="changeOption(selection())"
-  [class.bg-neutral-800]="selection().value === selectedOption"
+  [class.bg-neutral-800]="selection().value === currentSelection()"
 >
   <div
     class="bg-neutral-950 w-10 h-10 flex items-center justify-center rounded-12 border border-solid border-neutral-700"

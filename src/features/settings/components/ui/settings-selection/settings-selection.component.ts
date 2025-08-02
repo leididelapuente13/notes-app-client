@@ -16,7 +16,7 @@ import { SettingsSelectionCardComponent } from './settings-selection-card/settin
 export class SettingsSelectionComponent<T> {
   settingsSelectionCardComponent = new SettingsSelectionCardComponent<T>();
   readonly selections = input.required<Selection<T>[]>();
-  currentSelection = signal<T | null>(null);
+  readonly currentSelection = signal<T | null>(null);
 
   updateCurrentSelection(selection: T) {
     this.currentSelection.set(selection);
