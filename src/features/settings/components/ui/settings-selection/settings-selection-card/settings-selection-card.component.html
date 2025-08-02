@@ -8,7 +8,10 @@
   <div
     class="bg-neutral-950 w-10 h-10 flex items-center justify-center rounded-12 border border-solid border-neutral-700"
   >
-    <ng-container [ngComponentOutlet]="selection().icon"></ng-container>
+    <ng-container
+      [ngComponentOutlet]="selection().icon"
+      [ngComponentOutletInputs]="{ color: 'white' }"
+    ></ng-container>
   </div>
   <div>
     <p class="text-white text-preset-4 mb-1.5">

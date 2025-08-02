@@ -6,4 +6,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './icon-moon.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconMoonComponent { }
+export class IconMoonComponent {}

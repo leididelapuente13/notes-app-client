@@ -4,7 +4,11 @@ import {
   SettingsSelectionComponent,
 } from '@features/settings/components';
 import { Themes } from '@features/settings/types';
-import { IconSunComponent } from '@shared/components';
+import {
+  IconMoonComponent,
+  IconSunComponent,
+  IconSystemComponent,
+} from '@shared/components';
 import { Selection } from '@shared/interfaces';
 
 @Component({
@@ -24,13 +28,13 @@ class ThemePageComponent {
       value: 'light',
     },
     {
-      icon: IconSunComponent,
+      icon: IconMoonComponent,
       title: 'Dark Mode',
       description: 'Select a sleek and modern dark theme',
       value: 'dark',
     },
     {
-      icon: IconSunComponent,
+      icon: IconSystemComponent,
       title: 'System',
       description: 'Adapts to your device’s theme',
       value: 'system',
