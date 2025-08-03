@@ -10,9 +10,8 @@
   >
     <span
       class="flex items-center gap-2"
+      [class]="paddingClass()"
       [class.active]="rla.isActive"
-      [class.p-2]="paddingSize() === 'sm'"
-      [class]="paddingSize() === 'md' && 'py-2.5 px-3'"
     >
       <ng-container
         [ngComponentOutlet]="item().icon"
