@@ -1,0 +1,24 @@
+<div
+  class="flex items-center gap-4 p-4 rounded-12 border border-solid border-neutral-800 hover:cursor-pointer hover:bg-neutral-800"
+  tabindex="0"
+  role="button"
+  (click)="changeOption(selection())"
+  [class.bg-neutral-800]="selection().value === currentSelection()"
+>
+  <div
+    class="bg-neutral-950 w-10 h-10 flex items-center justify-center rounded-12 border border-solid border-neutral-700"
+  >
+    <ng-container
+      [ngComponentOutlet]="selection().icon"
+      [ngComponentOutletInputs]="{ color: 'white' }"
+    ></ng-container>
+  </div>
+  <div>
+    <p class="text-white text-preset-4 mb-1.5">
+      {{ selection().title }}
+    </p>
+    <p class="text-preset-6 text-neutral-300">
+      {{ selection().description }}
+    </p>
+  </div>
+</div>

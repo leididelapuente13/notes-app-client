@@ -9,7 +9,8 @@
     class="w-full text-preset-4"
   >
     <span
-      class="flex items-center gap-2 py-2.5 px-3"
+      class="flex items-center gap-2"
+      [class]="paddingClass()"
       [class.active]="rla.isActive"
     >
       <ng-container

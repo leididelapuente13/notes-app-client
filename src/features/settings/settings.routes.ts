@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import TemporalComponentComponent from '@features/notes/components/temporal-component/temporal-component.component';
 import { SettingsLayoutComponent } from '@shared/layouts/settings-layout/settings-layout.component';
+import ThemePageComponent from './pages/theme-page/theme-page.component';
 
 const settingsRouter: Routes = [
   {
@@ -9,7 +10,7 @@ const settingsRouter: Routes = [
     children: [
       {
         path: 'theme',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => ThemePageComponent,
       },
       {
         path: 'font',

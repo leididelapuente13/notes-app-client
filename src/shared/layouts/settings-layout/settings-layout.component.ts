@@ -1,11 +1,17 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  signal,
+} from '@angular/core';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import {
   BottomNavigationComponent,
   HeaderComponent,
   SidebarComponent,
 } from '@shared/components';
 import { SettingsSidebarComponent } from '@features/settings/components';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-settings-layout',
@@ -19,4 +25,23 @@ import { SettingsSidebarComponent } from '@features/settings/components';
   templateUrl: './settings-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SettingsLayoutComponent {}
+export class SettingsLayoutComponent {
+  private readonly router = inject(Router);
+  protected readonly currentRoute = signal(this.router.url);
+
+  constructor() {
+    this.handleRouteChanges();
+  }
+
+  private handleRouteChanges() {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.currentRoute.set(event.url);
+      });
+  }
+
+  renderSideBarInFullScreen(): boolean {
+    return this.currentRoute() === '/settings';
+  }
+}

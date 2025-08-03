@@ -8,3 +8,5 @@ export * from './icon-font/icon-font.component';
 export * from './icon-lock/icon-lock.component';
 export * from './icon-logout/icon-logout.component';
 export * from './icon-sun/icon-sun.component';
+export * from './icon-moon/icon-moon.component';
+export * from './icon-system/icon-system.component';
