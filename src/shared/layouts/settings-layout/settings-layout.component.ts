@@ -42,6 +42,6 @@ export class SettingsLayoutComponent {
   }
 
   renderSideBarInFullScreen(): boolean {
-    return this.currentRoute() === '/settings' ? true : false;
+    return this.currentRoute() === '/settings';
   }
 }
