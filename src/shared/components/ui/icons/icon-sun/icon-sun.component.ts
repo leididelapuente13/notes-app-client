@@ -9,8 +9,4 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class IconSunComponent {
   active = input<boolean>(false);
   color = input<'white' | 'neutral'>('neutral');
-
-  constructor() {
-    console.log(this.color(), typeof this.color());
-  }
 }
