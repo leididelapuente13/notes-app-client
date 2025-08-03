@@ -1,6 +1,4 @@
-<aside
-  class="hidden lg:block lg:w-[258px] pl-[32px] pr-[16px] pt-[20px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30 overflow-y-auto"
->
+<aside [class]="sidebarClasses()">
   <nav>
     <ul class="flex flex-col gap-y-2">
       @for (item of links; track item.path) {
