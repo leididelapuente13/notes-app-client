@@ -4,4 +4,7 @@
     description="Choose your color theme:"
   />
   <settings-selection [selections]="selections" />
+  <div class="w-full flex justify-end">
+    <app-button label="Apply Changes" [onClick]="updateTheme" />
+  </div>
 </article>

@@ -10,10 +10,11 @@ import {
   IconSystemComponent,
 } from '@shared/components';
 import { Selection } from '@shared/interfaces';
+import { ButtonComponent } from "@shared/components/ui/button/button.component";
 
 @Component({
   selector: 'settings-theme-page',
-  imports: [HeadingComponent, SettingsSelectionComponent],
+  imports: [HeadingComponent, SettingsSelectionComponent, ButtonComponent],
   templateUrl: './theme-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -40,5 +41,9 @@ class ThemePageComponent {
       value: 'system',
     },
   ];
+
+  updateTheme(): void {
+    console.log("Function placeholder clicked")
+  }
 }
 export default ThemePageComponent;
