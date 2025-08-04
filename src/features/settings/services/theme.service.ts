@@ -9,7 +9,7 @@ export class ThemeService {
   private readonly document = inject(DOCUMENT);
 
   private readonly CACHE_THEME_KEY = 'notes-app-theme';
-  public currentTheme = signal<Themes>('system');
+  public defaultTheme = signal<Themes>('system');
 
   private getDeviceTheme(): ThemeType {
     return window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -28,7 +28,7 @@ export class ThemeService {
 
   private toggleThemeClass(theme: Themes) {
     const validTheme: ThemeType =
-      theme == 'system' ? this.getDeviceTheme() : theme;
+      theme === 'system' ? this.getDeviceTheme() : theme;
     if (validTheme === 'dark') {
       this.document.body.classList.add('dark');
     } else {
@@ -37,18 +37,16 @@ export class ThemeService {
   }
 
   public updateTheme(theme: Themes) {
-    this.currentTheme.set(theme);
-    this.toggleThemeClass(this.currentTheme());
-    this.cacheTheme(this.currentTheme());
-    console.log(this.currentTheme());
+    this.toggleThemeClass(theme);
+    this.cacheTheme(theme);
   }
 
   public getTheme(): Themes {
     const cacheTheme = this.getCacheTheme();
-    return cacheTheme ?? this.currentTheme();
+    return cacheTheme ?? this.defaultTheme();
   }
 
   constructor() {
-    this.toggleThemeClass(this.currentTheme());
+    this.toggleThemeClass(this.getTheme());
   }
 }
