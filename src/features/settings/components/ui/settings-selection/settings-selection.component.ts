@@ -15,7 +15,6 @@ import { SettingsSelectionCardComponent } from './settings-selection-card/settin
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SettingsSelectionComponent<T> {
-  // settingsSelectionCardComponent = new SettingsSelectionCardComponent<T>();
   readonly selections = input.required<Selection<T>[]>();
   readonly currentSelection = input<T>();
   readonly selectedOption = output<T | null>();
