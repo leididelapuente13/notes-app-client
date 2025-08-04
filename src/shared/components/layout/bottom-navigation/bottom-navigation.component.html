@@ -1,13 +1,15 @@
 <nav
-  class="h-14 px-8 py-3 border-t border-solid border-neutral-800 shadow-sm md:h-[74px] lg:hidden"
+  class="dark:bg-neutral-950 px-8 py-3 border-t border-solid border-neutral-200 dark:border-neutral-800 shadow-sm md:h-[74px] lg:hidden"
 >
   <ul
     class="flex items-center justify-center md:justify-between md:gap-x-[37.5px]"
   >
-    @for (item of routes; track $index) {
+    @for (item of routes; track item.path) {
       <app-navigation-item [item]="item" />
       @if (!$last) {
-        <span class="md:border border-neutral-600 h-[50px]"></span>
+        <span
+          class="md:border border-neutral-100 dark:border-neutral-600 h-[50px]"
+        ></span>
       }
     }
   </ul>

@@ -8,4 +8,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class IconHomeComponent {
   active = input<boolean>(false);
+  lightThemeColor = input<'light' | 'dark'>('dark');
 }

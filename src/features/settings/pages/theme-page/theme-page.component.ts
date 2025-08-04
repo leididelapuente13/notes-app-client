@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 import {
   HeadingComponent,
   SettingsSelectionComponent,
@@ -11,6 +17,7 @@ import {
 } from '@shared/components';
 import { Selection } from '@shared/interfaces';
 import { ButtonComponent } from '@shared/components/ui/button/button.component';
+import { ThemeService } from '@features/settings/services/theme.service';
 
 @Component({
   selector: 'settings-theme-page',
@@ -19,7 +26,10 @@ import { ButtonComponent } from '@shared/components/ui/button/button.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 class ThemePageComponent {
+  themeService = inject(ThemeService);
   themeSelectionComponent = new SettingsSelectionComponent<Themes>();
+  currentTheme = computed(() => this.themeService.getTheme());
+  themeSelection = signal<Themes | null>(this.currentTheme());
 
   readonly selections: Selection<Themes>[] = [
     {
@@ -42,8 +52,12 @@ class ThemePageComponent {
     },
   ];
 
-  updateTheme(): void {
-    console.log('Function placeholder clicked');
+  updateThemeSelection(selection: Themes | null) {
+    this.themeSelection.set(selection);
   }
+
+  updateTheme = () => {
+    this.themeService.updateTheme(this.themeSelection() ?? 'system');
+  };
 }
 export default ThemePageComponent;

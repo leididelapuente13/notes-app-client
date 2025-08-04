@@ -3,7 +3,11 @@
     title="Color Theme"
     description="Choose your color theme:"
   />
-  <settings-selection [selections]="selections" />
+  <settings-selection
+    [selections]="selections"
+    (selectedOption)="updateThemeSelection($event)"
+    [currentSelection]="currentTheme()"
+  />
   <div class="w-full flex justify-end">
     <app-button label="Apply Changes" [onClick]="updateTheme" />
   </div>

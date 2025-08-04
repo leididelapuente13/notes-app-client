@@ -1,17 +1,16 @@
-<li
-  class="min-h-10 w-full text-neutral-200 rounded-8"
-  [class.bg-neutral-800]="rla.isActive"
->
+<li class="min-h-10 w-full">
   <a
     routerLinkActive="active"
     #rla="routerLinkActive"
     [routerLink]="item().path"
-    class="w-full text-preset-4"
+    class="w-full text-preset-4 text-neutral-950 dark:text-neutral-200"
   >
     <span
       class="flex items-center gap-2"
-      [class]="paddingClass()"
-      [class.active]="rla.isActive"
+      [class]="paddingClasses()"
+      [class.dark:bg-neutral-800]="rla.isActive"
+      [class.bg-neutral-100]="rla.isActive"
+      [class.rounded-8]="rla.isActive"
     >
       <ng-container
         [ngComponentOutlet]="item().icon"
