@@ -10,12 +10,6 @@ import { NavItemComponent } from './nav-item/nav-item.component';
   selector: 'app-nav',
   imports: [NavItemComponent],
   templateUrl: './nav.component.html',
-  styles: `
-    .active {
-      background-color: var(--color-neutral-800);
-      border-radius: var(--radius-lg);
-    }
-  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavComponent {

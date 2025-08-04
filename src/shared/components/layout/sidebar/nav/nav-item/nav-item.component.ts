@@ -22,10 +22,7 @@ import { Link } from '@shared/interfaces';
 export class NavItemComponent {
   item = input.required<Link>();
   paddingSize = input.required<'sm' | 'md'>();
-  protected readonly paddingClass = computed(() => {
-    if (this.paddingSize() === 'md') {
-      return 'py-2.5 px-3';
-    }
-    return 'p-2';
-  });
+  protected readonly paddingClasses = computed(() =>
+    this.paddingSize() === 'md' ? 'py-2.5 px-3' : 'p-2',
+  );
 }
