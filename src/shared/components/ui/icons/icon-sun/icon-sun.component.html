@@ -6,7 +6,9 @@
   viewBox="0 0 24 24"
 >
   <path
+    class="stroke"
     [class.stroke-blue-500]="active()"
+    [class.stroke-neutral-950]="!active()"
     [class.dark:stroke-white]="!active() && color() === 'white'"
     [class.dark:stroke-neutral-200]="!active() && color() === 'neutral'"
     stroke-linecap="round"
@@ -16,8 +18,9 @@
   />
   <path
     [class.stroke-blue-500]="active()"
-    [class.stroke-white]="!active() && color() === 'white'"
-    [class.stroke-neutral-200]="!active() && color() === 'neutral'"
+    [class.stroke-neutral-950]="!active()"
+    [class.dark:stroke-white]="!active() && color() === 'white'"
+    [class.dark:stroke-neutral-200]="!active() && color() === 'neutral'"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="1.5"

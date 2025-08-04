@@ -5,7 +5,8 @@
   fill="none"
   viewBox="0 0 24 24"
   [class.stroke-blue-500]="active()"
-  [class.stroke-neutral-950]="!active()"
+  [class.stroke-neutral-600]="!active() && lightThemeColor() === 'light'"
+  [class.stroke-neutral-950]="!active() && lightThemeColor() !== 'light'"
   [class.dark:stroke-neutral-400]="!active()"
 >
   <path
