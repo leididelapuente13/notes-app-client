@@ -10,7 +10,7 @@ export class ButtonComponent {
   label = input.required<string>();
   onClick = input.required<() => void>();
 
-  clickHandler(){
+  clickHandler() {
     const click = this.onClick();
     click();
   }

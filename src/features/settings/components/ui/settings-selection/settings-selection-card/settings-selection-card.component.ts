@@ -19,8 +19,8 @@ export class SettingsSelectionCardComponent<T> {
   readonly currentSelection = input<T>();
   readonly selectedOption = output<T>();
 
-  protected readonly isSelected = computed(() =>
-    this.selection().value === this.currentSelection()
+  protected readonly isSelected = computed(
+    () => this.selection().value === this.currentSelection(),
   );
 
   protected changeOption(): void {

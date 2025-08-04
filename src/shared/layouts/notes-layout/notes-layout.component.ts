@@ -17,5 +17,4 @@ import {
   templateUrl: './notes-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotesLayoutComponent {
-}
+export class NotesLayoutComponent {}

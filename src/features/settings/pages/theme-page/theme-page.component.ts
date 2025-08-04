@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  signal,
+} from '@angular/core';
 import {
   HeadingComponent,
   SettingsSelectionComponent,
@@ -22,7 +28,7 @@ import { ThemeService } from '@features/settings/services/theme.service';
 class ThemePageComponent {
   themeService = inject(ThemeService);
   themeSelectionComponent = new SettingsSelectionComponent<Themes>();
-  currentTheme = computed(()=> this.themeService.getTheme());
+  currentTheme = computed(() => this.themeService.getTheme());
   themeSelection = signal<Themes | null>(this.currentTheme());
 
   readonly selections: Selection<Themes>[] = [
@@ -52,6 +58,6 @@ class ThemePageComponent {
 
   updateTheme = () => {
     this.themeService.updateTheme(this.themeSelection() ?? 'system');
-  }
+  };
 }
 export default ThemePageComponent;

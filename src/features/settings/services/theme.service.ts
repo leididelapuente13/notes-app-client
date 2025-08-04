@@ -3,7 +3,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { Themes, ThemeType } from '../types';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ThemeService {
   private readonly document = inject(DOCUMENT);
@@ -12,12 +12,14 @@ export class ThemeService {
   public currentTheme = signal<Themes>('system');
 
   private getDeviceTheme(): ThemeType {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
   }
 
   private getCacheTheme(): ThemeType | undefined {
     const cacheTheme = localStorage.getItem(this.CACHE_THEME_KEY);
-    return cacheTheme ? cacheTheme as ThemeType : undefined;
+    return cacheTheme ? (cacheTheme as ThemeType) : undefined;
   }
 
   private cacheTheme(theme: Themes): void {
@@ -25,7 +27,8 @@ export class ThemeService {
   }
 
   private toggleThemeClass(theme: Themes) {
-    const validTheme: ThemeType = theme == 'system' ? this.getDeviceTheme() : theme
+    const validTheme: ThemeType =
+      theme == 'system' ? this.getDeviceTheme() : theme;
     if (validTheme === 'dark') {
       this.document.body.classList.add('dark');
     } else {
