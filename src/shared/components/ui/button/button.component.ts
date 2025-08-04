@@ -9,4 +9,9 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 export class ButtonComponent {
   label = input.required<string>();
   onClick = input.required<() => void>();
+
+  clickHandler(){
+    const click = this.onClick();
+    click();
+  }
 }

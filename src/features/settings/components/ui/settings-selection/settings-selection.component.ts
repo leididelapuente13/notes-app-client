@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   input,
+  output,
   signal,
 } from '@angular/core';
 import { Selection } from '@shared/interfaces';
@@ -14,11 +15,18 @@ import { SettingsSelectionCardComponent } from './settings-selection-card/settin
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SettingsSelectionComponent<T> {
-  settingsSelectionCardComponent = new SettingsSelectionCardComponent<T>();
+  // settingsSelectionCardComponent = new SettingsSelectionCardComponent<T>();
   readonly selections = input.required<Selection<T>[]>();
-  readonly currentSelection = signal<T | null>(null);
+  readonly currentSelection = input<T>();
+  readonly selectedOption = output<T | null>();
+  private readonly _internalSelection = signal<T | undefined>(undefined);
 
-  updateCurrentSelection(selection: T) {
-    this.currentSelection.set(selection);
+  protected updateSelection(selection: T): void {
+    this._internalSelection.set(selection);
+    this.selectedOption.emit(selection);
+  }
+
+  protected getCurrentSelection(): T | undefined {
+    return this._internalSelection() ?? this.currentSelection();
   }
 }
