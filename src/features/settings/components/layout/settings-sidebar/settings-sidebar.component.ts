@@ -24,10 +24,10 @@ export class SettingsSidebarComponent {
 
   protected readonly sidebarClasses = computed(() => {
     const baseClasses =
-      'w-screen lg:w-[258px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30 overflow-y-auto';
+      'w-full h-screen bg-white dark:bg-neutral-950 lg:w-[258px] h-full border-solid border-r border-neutral-200 dark:border-neutral-200/30 overflow-y-auto';
 
     if (this.renderInFullScreen()) {
-      return `block px-4 py-6 md:px-8 ${baseClasses}`;
+      return `block rounded-t-12 lg:rounded-0 px-4 py-6 md:px-8 ${baseClasses}`;
     }
 
     return `hidden lg:block ${baseClasses} py-5 pl-[32px] pr-[16px]`;
