@@ -27,6 +27,7 @@ import { filter } from 'rxjs';
 })
 export class SettingsLayoutComponent {
   private readonly router = inject(Router);
+
   protected readonly currentRoute = signal(this.router.url);
 
   constructor() {

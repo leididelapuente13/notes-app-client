@@ -2,6 +2,7 @@ import { NgComponentOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   input,
   output,
 } from '@angular/core';
@@ -15,10 +16,14 @@ import { Selection } from '@shared/interfaces';
 })
 export class SettingsSelectionCardComponent<T> {
   readonly selection = input.required<Selection<T>>();
-  readonly selectedOption = output<T>();
   readonly currentSelection = input<T>();
+  readonly selectedOption = output<T>();
 
-  changeOption(option: Selection<T>) {
-    this.selectedOption.emit(option.value);
+  protected readonly isSelected = computed(
+    () => this.selection().value === this.currentSelection(),
+  );
+
+  protected changeOption(): void {
+    this.selectedOption.emit(this.selection().value);
   }
 }
