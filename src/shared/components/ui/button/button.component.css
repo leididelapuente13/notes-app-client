@@ -56,7 +56,7 @@ button {
   &:hover {
     background-color: var(--color-neutral-100);
     color: var(--color-neutral-600);
-    border: none;
+    border: solid 1px transparent;
   }
   &:focus {
     border: solid 1px var(--color-neutral-950);
