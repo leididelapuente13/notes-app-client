@@ -29,11 +29,11 @@ button {
   }
 }
 
-.btn-primary-danger {
-  background-color: var(--color-blue-500);
+.btn-danger {
+  background-color: var(--color-red-500);
   color: var(--color-white);
   &:hover {
-    background-color: var(--color-blue-700);
+    background-color: var(--color-red-700);
   }
 }
 

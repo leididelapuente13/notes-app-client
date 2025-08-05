@@ -17,7 +17,7 @@ import {
 export class ButtonComponent {
   icon = input<Type<unknown>>();
   label = input.required<string>();
-  variant = input.required<'primary' | 'secondary' | 'border'>();
+  variant = input.required<'primary' | 'secondary' | 'border' | 'danger'>();
   isDangerButton = input<boolean>(false);
   alignContent = input<'left' | 'center'>('center');
   disabled = input<boolean>(false);
@@ -31,6 +31,8 @@ export class ButtonComponent {
         return 'btn-secondary';
       case 'border':
         return 'btn-border';
+      case 'danger':
+        return 'btn-danger';
       default:
         return;
     }
