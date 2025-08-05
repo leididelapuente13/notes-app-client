@@ -1,7 +1,14 @@
 <button
   type="button"
-  class="bg-blue-500 text-white text-preset-4 py-3 px-4 rounded-8 hover:cursor-pointer"
+  [class]="disabled() ? disabledClasses() : activeClasses()"
+  [class.dark:text-white]="variant() === 'border'"
+  [class.text-neutral-950]="variant() === 'border'"
+  [class.justify-start]="alignContent() === 'left'"
+  [class.justify-center]="alignContent() !== 'left'"
   (click)="clickHandler()"
 >
-  {{ label() }}
+  @if (icon()) {
+    <ng-container [ngComponentOutlet]="icon()!"></ng-container>
+  }
+  <p>{{ label() }}</p>
 </button>
