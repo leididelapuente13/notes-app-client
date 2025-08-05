@@ -1,0 +1,28 @@
+<div class="flex flex-col gap-1.5">
+  <label class="text-preset-4 text-neutral-950 dark:text-white">
+    @if (label()) {
+      <span>
+        {{ label() | titlecase }}
+      </span>
+    }
+    <div
+      class="shadow-sm bg-inherit flex items-center gap-x-2 pl-4 pr-3 mt-1.5 border border-solid border-neutral-300 rounded-8"
+      [class.justify-between]="iconPlacement() === 'end'"
+    >
+      @if (currentIcon() && iconPlacement() === "start") {
+        <ng-container [ngComponentOutlet]="currentIcon()"></ng-container>
+      }
+      <input
+        type="text"
+        class="py-3 outline-0 text-preset-5 placeholder:text-neutral-500"
+        placeholder="placeholder"
+      />
+      @if (currentIcon() && iconPlacement() === "end") {
+        <ng-container [ngComponentOutlet]="currentIcon()"></ng-container>
+      }
+    </div>
+  </label>
+  @if (hintMessage()) {
+    <app-input-hint [message]="hintMessage()" />
+  }
+</div>
