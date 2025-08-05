@@ -1,0 +1,10 @@
+<div class="flex gap-x-2 items-center">
+  <app-icon-info [color]="isError() ? 'red' : 'neutral'" />
+  <p
+    class="text-preset-6"
+    [class.text-red-500]="isError()"
+    [class.text-neutral-600]="!isError()"
+  >
+    {{ message() }}
+  </p>
+</div>
