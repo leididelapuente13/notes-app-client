@@ -1,5 +1,11 @@
 import { NgComponentOutlet } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, input, Type } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+  Type,
+} from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -30,15 +36,15 @@ export class ButtonComponent {
     }
   });
 
-  disabledClasses = computed(()=>{
-    if(this.disabled() && this.variant() === 'primary'){
-      return 'btn-primary-disabled'
+  disabledClasses = computed(() => {
+    if (this.disabled() && this.variant() === 'primary') {
+      return 'btn-primary-disabled';
     }
-    return 'btn-disabled'
-  })
+    return 'btn-disabled';
+  });
 
   clickHandler() {
-    if(this.disabled()) return
+    if (this.disabled()) return;
     const click = this.onClick();
     click();
   }
