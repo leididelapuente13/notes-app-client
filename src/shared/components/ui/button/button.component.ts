@@ -34,7 +34,7 @@ export class ButtonComponent {
       case 'danger':
         return 'btn-danger';
       default:
-        return;
+        return 'btn-primary';
     }
   });
 
