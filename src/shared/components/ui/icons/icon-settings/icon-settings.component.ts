@@ -8,4 +8,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class IconSettingsComponent {
   active = input<boolean>(false);
+  color = input<'default' | 'light'>('default');
 }
