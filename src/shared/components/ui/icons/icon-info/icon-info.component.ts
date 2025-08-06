@@ -7,5 +7,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconInfoComponent {
-  color = input<'neutral' | 'red'>('neutral');
+  color = input<'default' | 'red' | 'light'>('default');
 }
