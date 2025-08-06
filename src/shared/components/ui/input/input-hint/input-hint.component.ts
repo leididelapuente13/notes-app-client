@@ -10,4 +10,5 @@ import { IconInfoComponent } from '../../icons/icon-info/icon-info.component';
 export class InputHintComponent {
   readonly message = input.required<string>();
   readonly isError = input<boolean>(false);
+  readonly isDisabled = input<boolean>(false);
 }
