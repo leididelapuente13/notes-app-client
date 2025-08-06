@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-icon-show',
@@ -6,4 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './icon-show.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconShowComponent {}
+export class IconShowComponent {
+  color = input<'default' | 'light'>('default');
+}
