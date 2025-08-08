@@ -1,0 +1,50 @@
+<div class="flex flex-col gap-1.5">
+  <label
+    [htmlFor]="name()"
+    class="text-preset-4 text-neutral-950 dark:text-white"
+  >
+    @if (label()) {
+      <span>
+        {{ label() | titlecase }}
+      </span>
+    }
+    <div
+      [class]="inputClasses()"
+      [class.justify-between]="iconPlacement() === 'end'"
+    >
+      @if (currentIcon() && iconPlacement() === "start") {
+        <ng-container
+          [ngComponentOutlet]="currentIcon()"
+          [ngComponentOutletInputs]="{
+            color: isDisabled() ? 'light' : 'default',
+          }"
+        ></ng-container>
+      }
+      <input
+        [type]="type()"
+        [id]="name()"
+        [name]="name()"
+        class="grow py-3 outline-0 text-preset-5 text-neutral-950 dark:text-white"
+        [class]="
+          isDisabled()
+            ? 'placeholder:text-neutral-300'
+            : 'placeholder:text-neutral-500'
+        "
+        [placeholder]="placeholder()"
+        [disabled]="isDisabled()"
+      />
+      @if (currentIcon() && iconPlacement() === "end") {
+        <ng-container
+          [ngComponentOutlet]="currentIcon()"
+          [ngComponentOutletInputs]="{
+            color: isDisabled() ? 'light' : 'default',
+          }"
+        >
+        </ng-container>
+      }
+    </div>
+  </label>
+  @if (hintMessage()) {
+    <app-input-hint [message]="hintMessage()" [isDisabled]="isDisabled()" />
+  }
+</div>

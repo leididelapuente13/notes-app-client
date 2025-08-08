@@ -1,12 +1,11 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
-  selector: 'app-icon-settings',
+  selector: 'app-icon-show',
   imports: [],
-  templateUrl: './icon-settings.component.html',
+  templateUrl: './icon-show.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconSettingsComponent {
-  active = input<boolean>(false);
+export class IconShowComponent {
   color = input<'default' | 'light'>('default');
 }

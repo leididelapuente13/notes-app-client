@@ -1,18 +1,17 @@
 <header class="dark:bg-neutral-950">
   <div
-    class="hidden lg:flex w-full max-h-[81px] py-[26px] px-8 flex-1 lg:border-solid border-b border-neutral-200 dark:border-neutral-200/30 justify-between items-center"
+    class="hidden lg:flex items-center w-full h-[81px] px-8 flex-1 lg:border-solid border-b border-neutral-200 dark:border-neutral-200/30 justify-between"
   >
     <app-title title="Section" />
-    <div>
-      <div class="flex gap-4 items-center">
-        <!-- TODO: Replace with search component -->
-        <div
-          class="w-[300px] h-[44px] shadow-sm border border-neutral-300 rounded-6"
-        ></div>
-        <a routerLink="/settings">
-          <app-icon-settings />
-        </a>
-      </div>
+    <div class="flex gap-4 items-center justify-center">
+      <app-input
+        class="w-[300px]"
+        name="search-query"
+        placeholder="Search by title, content, or tags…"
+      />
+      <a routerLink="/settings">
+        <app-icon-settings color="light" />
+      </a>
     </div>
   </div>
   <div
