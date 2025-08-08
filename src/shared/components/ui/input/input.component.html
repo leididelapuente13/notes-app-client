@@ -21,10 +21,10 @@
         ></ng-container>
       }
       <input
-        type="text"
+        [type]="type()"
         [id]="name()"
         [name]="name()"
-        class="py-3 outline-0 text-preset-5 text-neutral-950 dark:text-white"
+        class="grow py-3 outline-0 text-preset-5 text-neutral-950 dark:text-white"
         [class]="
           isDisabled()
             ? 'placeholder:text-neutral-300'
