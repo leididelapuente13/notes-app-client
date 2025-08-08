@@ -46,7 +46,6 @@ export class InputComponent {
   protected currentIcon = computed(() => {
     const iconKey = this.iconName();
     if (!iconKey) return null;
-    console.log(this.iconMap().get(iconKey) ?? null);
     return this.iconMap().get(iconKey) ?? null;
   });
 }
