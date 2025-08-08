@@ -28,7 +28,7 @@ export class ButtonComponent {
       case 'primary':
         return 'btn-primary';
       case 'secondary':
-        return 'btn-secondary';
+        return 'btn-secondary-light dark:btn-secondary-dark';
       case 'border':
         return 'btn-border';
       case 'danger':

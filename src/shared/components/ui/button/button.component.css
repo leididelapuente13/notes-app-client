@@ -37,7 +37,7 @@ button {
   }
 }
 
-.btn-secondary {
+.btn-secondary-light {
   background-color: var(--color-neutral-100);
   color: var(--color-neutral-600);
   &:hover {
@@ -47,6 +47,19 @@ button {
   }
   &:focus {
     border: solid 1px var(--color-neutral-950);
+  }
+}
+
+.btn-secondary-dark {
+  background-color: var(--color-neutral-800);
+  color: var(--color-neutral-400);
+  &:hover {
+    background-color: var(--color-neutral-950);
+    color: var(--color-white);
+    border: solid 1px var(--color-neutral-300);
+  }
+  &:focus {
+    border: solid 1px var(--color-white);
   }
 }
 
