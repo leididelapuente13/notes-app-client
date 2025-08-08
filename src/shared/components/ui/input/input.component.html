@@ -1,5 +1,8 @@
 <div class="flex flex-col gap-1.5">
-  <label class="text-preset-4 text-neutral-950 dark:text-white">
+  <label
+    [htmlFor]="name()"
+    class="text-preset-4 text-neutral-950 dark:text-white"
+  >
     @if (label()) {
       <span>
         {{ label() | titlecase }}
@@ -19,6 +22,8 @@
       }
       <input
         type="text"
+        [id]="name()"
+        [name]="name()"
         class="py-3 outline-0 text-preset-5 text-neutral-950 dark:text-white"
         [class]="
           isDisabled()

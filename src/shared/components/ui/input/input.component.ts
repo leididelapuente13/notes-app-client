@@ -17,6 +17,7 @@ import { IconShowComponent } from '../icons/icon-show/icon-show.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputComponent {
+  name = input.required<string>();
   label = input<string>('');
   placeholder = input.required<string>();
   isDisabled = input<boolean>(false);
