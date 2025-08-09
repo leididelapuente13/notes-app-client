@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root',
 })
 export class ModalService {
-  isVisible = signal<boolean>(true);
+  isVisible = signal<boolean>(false);
 
   toggleModal() {
     this.isVisible.update((visible) => !visible);
