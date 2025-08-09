@@ -27,7 +27,7 @@ export class ButtonComponent {
   onClick = input.required<() => void>();
 
   protected readonly isDarkMode = computed(() =>
-    this.document.body.classList.contains('dark')
+    this.document.body.classList.contains('dark'),
   );
 
   activeClasses = computed(() => {
