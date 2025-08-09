@@ -1,0 +1,40 @@
+@if (visible()) {
+  <div
+    class="fixed inset-0 w-full h-full flex items-center justify-center bg-black/70 dark:bg-black/50 overflow-y-auto z-20"
+  >
+    <article
+      class="w-[343px] md:w-[440px] h-fit bg-white dark:bg-neutral-700 rounded-12 border border-neutral-200 dark:border-neutral-600 opacity-100 shadow-large"
+    >
+      <div class="flex p-5 gap-x-4">
+        @if (getIcon(iconName())) {
+          <div
+            class="bg-neutral-100 dark:bg-neutral-600 rounded-8 h-10 w-10 p-2"
+          >
+            <ng-container
+              [ngComponentOutlet]="getIcon(iconName())"
+            ></ng-container>
+          </div>
+        }
+        <div>
+          <h4 class="text-preset-3 text-neutral-950 dark:text-white">
+            {{ title() }}
+          </h4>
+          <p class="text-preset-5 text-neutral-700 dark:text-neutral-200">
+            {{ description() }}
+          </p>
+        </div>
+      </div>
+      <span
+        class="block w-full h-[1px] bg-neutral-200 dark:bg-neutral-600"
+      ></span>
+      <footer class="w-full px-5 py-4 flex justify-end gap-4">
+        <app-button label="Cancel" variant="secondary" [onClick]="onCancel" />
+        <app-button
+          label="Archive Note"
+          [variant]="iconName() === 'delete' ? 'danger' : 'primary'"
+          [onClick]="onCancel"
+        />
+      </footer>
+    </article>
+  </div>
+}
