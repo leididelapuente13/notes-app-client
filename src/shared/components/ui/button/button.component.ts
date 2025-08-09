@@ -1,8 +1,9 @@
-import { NgComponentOutlet } from '@angular/common';
+import { DOCUMENT, NgComponentOutlet } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  inject,
   input,
   Type,
 } from '@angular/core';
@@ -15,6 +16,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
+  document = inject(DOCUMENT);
+
   icon = input<Type<unknown>>();
   label = input.required<string>();
   variant = input.required<'primary' | 'secondary' | 'border' | 'danger'>();
@@ -23,12 +26,16 @@ export class ButtonComponent {
   disabled = input<boolean>(false);
   onClick = input.required<() => void>();
 
+  protected readonly isDarkMode = computed(() =>
+    this.document.body.classList.contains('dark'),
+  );
+
   activeClasses = computed(() => {
     switch (this.variant()) {
       case 'primary':
         return 'btn-primary';
       case 'secondary':
-        return 'btn-secondary';
+        return this.isDarkMode() ? 'btn-secondary-dark' : 'btn-secondary-light';
       case 'border':
         return 'btn-border';
       case 'danger':

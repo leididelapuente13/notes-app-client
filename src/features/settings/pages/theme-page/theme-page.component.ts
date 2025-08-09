@@ -16,7 +16,7 @@ import {
   IconSystemComponent,
 } from '@shared/components';
 import { Selection } from '@shared/interfaces';
-import { ButtonComponent } from '@shared/components/ui/button/button.component';
+import { ButtonComponent } from '@shared/components/ui';
 import { ThemeService } from '@features/settings/services/theme.service';
 
 @Component({
