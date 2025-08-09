@@ -10,3 +10,4 @@ export * from './icon-logout/icon-logout.component';
 export * from './icon-sun/icon-sun.component';
 export * from './icon-moon/icon-moon.component';
 export * from './icon-system/icon-system.component';
+export * from './icon-delete/icon-delete.component';
