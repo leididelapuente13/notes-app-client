@@ -3,7 +3,6 @@
   [class]="disabled() ? disabledClasses() : activeClasses()"
   [class.dark:text-white]="variant() === 'border'"
   [class.text-neutral-950]="variant() === 'border'"
-  [class.dark:btn-secondary-dark]="variant() === 'secondary'"
   [class.justify-start]="alignContent() === 'left'"
   [class.justify-center]="alignContent() !== 'left'"
   (click)="clickHandler()"
