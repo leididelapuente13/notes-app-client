@@ -1,5 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { IconDeleteComponent, IconArchiveComponent } from "@shared/components/ui/icons";
+import {
+  IconDeleteComponent,
+  IconArchiveComponent,
+} from '@shared/components/ui/icons';
 
 @Component({
   selector: 'app-header-control',
@@ -7,4 +10,4 @@ import { IconDeleteComponent, IconArchiveComponent } from "@shared/components/ui
   templateUrl: './header-control.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderControlComponent { }
+export class HeaderControlComponent {}
