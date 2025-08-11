@@ -7,5 +7,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconDeleteComponent {
-  color = input<'white'>('white');
+  color = input<'dark' | 'neutral'>('dark');
 }

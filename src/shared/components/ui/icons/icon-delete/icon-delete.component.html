@@ -6,8 +6,9 @@
   viewBox="0 0 24 25"
 >
   <path
-    [class.dark:stroke-white]="color() === 'white'"
-    class="stroke-neutral-950"
+    [class.stroke-neutral-950]="color() === 'dark'"
+    [class.stroke-neutral-600]="color() === 'neutral'"
+    class="dark:stroke-white"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="1.5"
