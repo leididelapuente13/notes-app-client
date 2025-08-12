@@ -4,6 +4,8 @@ import {
   computed,
   input,
 } from '@angular/core';
+import { IconColorVariants, IconSizeVariants } from '@shared/interfaces';
+import { getIconSize, getIconStrokeColor } from '@shared/utils';
 
 @Component({
   selector: 'app-icon-archived',
@@ -14,47 +16,19 @@ import {
 export class IconArchiveComponent {
   active = input<boolean>(false);
 
-  lightVariant = input<'neutralDark' | 'neutralLight'>('neutralDark');
-  darkVariant = input<'white' | 'neutralPrimary' | 'neutralSecondary'>('white');
+  lightVariant = input<IconColorVariants>('neutral-950');
+  darkVariant = input<IconColorVariants>('white');
 
-  lightActiveVariant = input<'blue'>('blue');
-  darkActiveVariant = input<'blue'>('blue');
+  lightActiveVariant = input<IconColorVariants>('active');
+  darkActiveVariant = input<IconColorVariants>('active');
+  size = input<IconSizeVariants>('lg');
 
-  size = input<'xs' | 'sm' | 'md'>('sm');
+  protected readonly iconSizeClass = computed(() => getIconSize(this.size()));
 
-  protected readonly iconSize = computed(() => {
-    const sizeMap = {
-      xs: 'w-4 h-4', // 16x16
-      sm: 'w-[18px] h-[18px]', // 18x18
-      md: 'w-6 h-6', // 24x24
-      lg: 'w-8 h-8', // 32x32
-    };
-    return sizeMap[this.size()];
-  });
-
-  protected readonly iconStroke = computed(() => {
-    const lightStrokeMap = {
-      neutralDark: 'stroke-neutral-950',
-      neutralLight: 'stroke-neutral-600',
-    };
-
-    const darkStrokeMap = {
-      neutralPrimary: 'stroke-neutral-400',
-      neutralSecondary: 'stroke-neutral-300',
-      white: 'stroke-white',
-    };
-
-    const lightActiveStrokeMap = {
-      blue: 'stroke-blue-500',
-    };
-
-    const darkActiveStrokeMap = {
-      blue: 'stroke-blue-500',
-    };
-
-    if (this.active())
-      return `${lightActiveStrokeMap[this.lightActiveVariant()]} dark:${darkActiveStrokeMap[this.darkActiveVariant()]}`;
-
-    return `${lightStrokeMap[this.lightVariant()]} dark:${darkStrokeMap[this.darkVariant()]} `;
+  protected readonly iconStrokeClass = computed(() => {
+    if (this.active()) {
+      return `${getIconStrokeColor(this.lightActiveVariant())} dark:${getIconStrokeColor(this.darkActiveVariant())} `;
+    }
+    return `${getIconStrokeColor(this.lightVariant())} dark:${getIconStrokeColor(this.darkVariant())}`;
   });
 }

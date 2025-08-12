@@ -1,13 +1,11 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="25"
+  [class]="iconSizeClass()"
   fill="none"
   viewBox="0 0 24 25"
 >
   <path
-    [class.dark:stroke-white]="color() === 'white'"
-    class="stroke-neutral-950"
+    [class]="iconStroke()"
     stroke-linecap="round"
     stroke-linejoin="round"
     stroke-width="1.5"
