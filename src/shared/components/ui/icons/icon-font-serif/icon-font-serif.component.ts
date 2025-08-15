@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+} from '@angular/core';
 import { IconColorVariants, IconSizeVariants } from '@shared/interfaces';
 import { getIconFillColor, getIconSize } from '@shared/utils';
 
