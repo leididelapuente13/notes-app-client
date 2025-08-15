@@ -17,8 +17,6 @@ export class IconDeleteComponent {
   lightVariant = input<IconColorVariants>('neutral-950');
   darkVariant = input<IconColorVariants>('white');
 
-  lightActiveVariant = input<IconColorVariants>('active');
-  darkActiveVariant = input<IconColorVariants>('active');
   size = input<IconSizeVariants>('lg');
 
   protected readonly iconSizeClass = computed(() => getIconSize(this.size()));

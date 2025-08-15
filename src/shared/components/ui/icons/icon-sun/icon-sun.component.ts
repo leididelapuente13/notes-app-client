@@ -26,9 +26,17 @@ export class IconSunComponent {
   protected readonly iconSizeClass = computed(() => getIconSize(this.size()));
 
   protected readonly iconStrokeClass = computed(() => {
-    if (this.active()) {
-      return `${getIconStrokeColor(this.lightActiveVariant())} dark:${getIconStrokeColor(this.darkActiveVariant())} `;
-    }
-    return `${getIconStrokeColor(this.lightVariant())} dark:${getIconStrokeColor(this.darkVariant())}`;
+    const isActive = this.active();
+
+    const lightColorVariant = isActive
+      ? this.lightActiveVariant()
+      : this.lightVariant();
+    const darkColorVariant = isActive
+      ? this.darkActiveVariant()
+      : this.darkVariant();
+
+    const lightStrokeClass = getIconStrokeColor(lightColorVariant);
+    const darkStrokeClass = getIconStrokeColor(darkColorVariant);
+    return `${lightStrokeClass} dark:${darkStrokeClass}`;
   });
 }

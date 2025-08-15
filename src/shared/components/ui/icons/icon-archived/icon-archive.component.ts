@@ -14,21 +14,40 @@ import { getIconSize, getIconStrokeColor } from '@shared/utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconArchiveComponent {
-  active = input<boolean>(false);
+  protected readonly active = input<boolean>(false);
+  protected readonly size = input<IconSizeVariants>('lg');
 
-  lightVariant = input<IconColorVariants>('neutral-950');
-  darkVariant = input<IconColorVariants>('white');
-
-  lightActiveVariant = input<IconColorVariants>('active');
-  darkActiveVariant = input<IconColorVariants>('active');
-  size = input<IconSizeVariants>('lg');
+  protected readonly lightVariant = input<IconColorVariants>('neutral-600');
+  protected readonly darkVariant = input<IconColorVariants>('neutral-400');
+  protected readonly lightActiveVariant =
+    input<IconColorVariants>('neutral-950');
+  protected readonly darkActiveVariant = input<IconColorVariants>('active');
 
   protected readonly iconSizeClass = computed(() => getIconSize(this.size()));
 
+  protected readonly iconFillLightClass = computed(() => {
+    const isActive = this.active();
+
+    const lightColor = isActive
+      ? this.lightActiveVariant()
+      : this.lightVariant();
+    const lightClass = getIconStrokeColor(lightColor);
+
+    return lightClass;
+  });
+
   protected readonly iconStrokeClass = computed(() => {
-    if (this.active()) {
-      return `${getIconStrokeColor(this.lightActiveVariant())} dark:${getIconStrokeColor(this.darkActiveVariant())} `;
-    }
-    return `${getIconStrokeColor(this.lightVariant())} dark:${getIconStrokeColor(this.darkVariant())}`;
+    const isActive = this.active();
+
+    const lightColorVariant = isActive
+      ? this.lightActiveVariant()
+      : this.lightVariant();
+    const darkColorVariant = isActive
+      ? this.darkActiveVariant()
+      : this.darkVariant();
+
+    const lightStrokeClass = getIconStrokeColor(lightColorVariant);
+    const darkStrokeClass = getIconStrokeColor(darkColorVariant);
+    return `${lightStrokeClass} dark:${darkStrokeClass}`;
   });
 }

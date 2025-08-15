@@ -26,9 +26,17 @@ export class IconSearchComponent {
   protected readonly iconSizeClass = computed(() => getIconSize(this.size()));
 
   protected readonly iconStrokeClass = computed(() => {
-    if (this.active()) {
-      return `${getIconFillColor(this.lightActiveVariant())} dark:${getIconFillColor(this.darkActiveVariant())} `;
-    }
-    return `${getIconFillColor(this.lightVariant())} dark:${getIconFillColor(this.darkVariant())} `;
+    const isActive = this.active();
+
+    const lightColorVariant = isActive
+      ? this.lightActiveVariant()
+      : this.lightVariant();
+    const darkColorVariant = isActive
+      ? this.darkActiveVariant()
+      : this.darkVariant();
+
+    const lightStrokeClass = getIconFillColor(lightColorVariant);
+    const darkStrokeClass = getIconFillColor(darkColorVariant);
+    return `${lightStrokeClass} dark:${darkStrokeClass}`;
   });
 }
