@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { InputComponent } from '@shared/components/ui/input/input.component';
 
 @Component({
   selector: 'app-temporal-component',
-  imports: [InputComponent],
+  imports: [],
   templateUrl: './temporal-component.component.html',
 })
 class TemporalComponentComponent {}
