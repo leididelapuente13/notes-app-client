@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IconArrowRightComponent } from '@shared/components/ui/icons';
-import { Link } from '@shared/interfaces';
+import { IconColorVariants, Link } from '@shared/interfaces';
 @Component({
   selector: 'app-nav-item',
   imports: [
@@ -22,6 +22,9 @@ import { Link } from '@shared/interfaces';
 export class NavItemComponent {
   item = input.required<Link>();
   paddingSize = input.required<'sm' | 'md'>();
+  iconLightActiveColor = input<IconColorVariants>('neutral-950');
+  iconDarkActiveColor = input<IconColorVariants>('active');
+
   protected readonly paddingClasses = computed(() =>
     this.paddingSize() === 'md' ? 'py-2.5 px-3' : 'p-2',
   );

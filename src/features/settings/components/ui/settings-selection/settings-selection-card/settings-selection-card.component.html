@@ -11,7 +11,12 @@
   >
     <ng-container
       [ngComponentOutlet]="selection().icon"
-      [ngComponentOutletInputs]="{ color: 'white' }"
+      [ngComponentOutletInputs]="{
+        lightVariant: 'neutral-950',
+        lightActiveVariant: 'neutral-950',
+        darkActiveVariant: 'white',
+        darkVariant: 'white',
+      }"
     ></ng-container>
   </div>
   <div>

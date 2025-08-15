@@ -1,7 +1,12 @@
 <nav>
   <ul class="flex flex-col w-full gap-2">
     @for (item of routes; track $index) {
-      <app-nav-item [item]="item" paddingSize="md" />
+      <app-nav-item
+        [item]="item"
+        paddingSize="md"
+        iconLightActiveColor="active"
+        iconDarkActiveColor="active"
+      />
     }
   </ul>
 </nav>
