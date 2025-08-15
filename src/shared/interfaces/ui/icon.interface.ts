@@ -1,4 +1,12 @@
-export type IconSizeVariants = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'custom';
+export type IconSizeVariants =
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | 'customXs'
+  | 'customMd'
+  | 'customLg';
 
 export interface IconClasses {
   class: string;
