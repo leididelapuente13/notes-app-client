@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+} from '@angular/core';
+import { IconColorVariants } from '@shared/interfaces';
+import { getIconStrokeColor } from '@shared/utils';
 
 @Component({
   selector: 'app-icon-info',
@@ -7,5 +14,10 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconInfoComponent {
-  color = input<'default' | 'red' | 'light'>('default');
+  lightVariant = input<IconColorVariants>('neutral-600');
+  darkVariant = input<IconColorVariants>('neutral-600');
+
+  protected readonly iconStrokeClass = computed(() => {
+    return `${getIconStrokeColor(this.lightVariant())} dark:${getIconStrokeColor(this.darkVariant())}`;
+  });
 }

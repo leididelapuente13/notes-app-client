@@ -1,14 +1,10 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
   fill="none"
   viewBox="0 0 24 24"
-  [class.stroke-blue-500]="active()"
-  [class.stroke-neutral-600]="!active() && color() === 'light'"
-  [class.stroke-neutral-950]="!active() && color() !== 'light'"
-  [class.dark:stroke-white]="!active() && color() === 'white'"
-  [class.dark:stroke-neutral-400]="!active()"
+  [class]="`${iconSizeClass()} ${iconStrokeClass()}`"
+  aria-hidden="true"
+  focusable="false"
 >
   <path
     stroke-linecap="round"

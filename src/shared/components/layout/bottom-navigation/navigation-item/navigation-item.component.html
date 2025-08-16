@@ -1,6 +1,6 @@
 <li
   [class.bg-blue-50]="rla.isActive"
-  [class.dark:bg-neutral-700]="rla.isActive"
+  [class.dark:bg-blue-50]="rla.isActive"
   [class.rounded]="rla.isActive"
   class="h-8 px-[19.1px] py-1 text-preset-6 md:w-[80px] md:h-[50px]"
 >
@@ -16,10 +16,14 @@
       [ngComponentOutlet]="item().icon"
       [ngComponentOutletInputs]="{
         active: rla.isActive,
-        color: 'light',
+        size: 'lg',
+        lightVariant: 'neutral-600',
+        darkVariant: 'neutral-400',
+        lightActiveVariant: 'active',
+        darkActiveVariant: 'active',
       }"
     ></ng-container>
-    <span class="hidden text-neutral-500 dark:text-neutral-400 md:block">
+    <span class="hidden text-neutral-600 dark:text-neutral-400 md:block">
       {{ item().label }}
     </span>
   </a>

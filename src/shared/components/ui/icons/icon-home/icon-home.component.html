@@ -1,13 +1,8 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
-  fill="none"
+  fill="currentColor"
   viewBox="0 0 24 24"
-  [class.fill-blue-500]="active()"
-  [class.fill-neutral-600]="!active() && color() === 'light'"
-  [class.fill-neutral-950]="!active() && color() !== 'light'"
-  [class.dark:fill-neutral-400]="!active()"
+  [class]="`${iconSizeClass()} ${iconStrokeClass()}`"
 >
   <path
     fill-rule="evenodd"

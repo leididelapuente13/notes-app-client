@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@source inline("{dark:,}fill-{neutral-200,neutral-300,neutral-400,neutral-500,neutral-600,neutral-700,neutral-950,blue-500,green-500,red-500,black,white}");
+
+@source inline("{dark:,}stroke-{neutral-200,neutral-300,neutral-400,neutral-500,neutral-600,neutral-700,neutral-950,blue-500,green-500,red-500,black,white}");
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {

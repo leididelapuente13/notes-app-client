@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { InputHintComponent } from './input-hint/input-hint.component';
 import { IconShowComponent } from '../icons/icon-show/icon-show.component';
+import { IconSearchComponent } from '../icons';
 
 @Component({
   selector: 'app-input',
@@ -24,11 +25,14 @@ export class InputComponent {
   isDisabled = input<boolean>(false);
   isError = input<boolean>(false);
   hintMessage = input<string>('');
-  iconName = input<'show'>();
+  iconName = input<'show' | 'search'>();
   iconPlacement = input<'start' | 'end'>('start');
 
   protected readonly iconMap = signal(
-    new Map<string, Type<unknown>>([['show', IconShowComponent]]),
+    new Map<string, Type<unknown>>([
+      ['show', IconShowComponent],
+      ['search', IconSearchComponent],
+    ]),
   );
 
   protected readonly inputClasses = computed(() => {

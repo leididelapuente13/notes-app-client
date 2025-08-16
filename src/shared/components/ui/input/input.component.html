@@ -16,7 +16,9 @@
         <ng-container
           [ngComponentOutlet]="currentIcon()"
           [ngComponentOutletInputs]="{
-            color: isDisabled() ? 'light' : 'default',
+            size: 'md',
+            lightVariant: 'neutral-500',
+            darkVariant: 'neutral-400',
           }"
         ></ng-container>
       }
@@ -37,7 +39,9 @@
         <ng-container
           [ngComponentOutlet]="currentIcon()"
           [ngComponentOutletInputs]="{
-            color: isDisabled() ? 'light' : 'default',
+            size: 'md',
+            lightVariant: 'neutral-500',
+            darkVariant: 'neutral-400',
           }"
         >
         </ng-container>
@@ -45,6 +49,10 @@
     </div>
   </label>
   @if (hintMessage()) {
-    <app-input-hint [message]="hintMessage()" [isDisabled]="isDisabled()" />
+    <app-input-hint
+      [message]="hintMessage()"
+      [isDisabled]="isDisabled()"
+      [isError]="isError()"
+    />
   }
 </div>
