@@ -9,6 +9,7 @@ import { getIconFillColor, getIconSize } from '@shared/utils';
 
 @Component({
   selector: 'app-icon-home',
+  imports: [],
   templateUrl: './icon-home.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -23,24 +24,6 @@ export class IconHomeComponent {
   protected readonly darkActiveVariant = input<IconColorVariants>('active');
 
   protected readonly iconSizeClass = computed(() => getIconSize(this.size()));
-
-  protected readonly iconFillLightClass = computed(() => {
-    const isActive = this.active();
-
-    const lightColor = isActive
-      ? this.lightActiveVariant()
-      : this.lightVariant();
-    const lightClass = getIconFillColor(lightColor);
-
-    return lightClass;
-  });
-
-  protected readonly iconFillDarkClass = computed(() => {
-    if (!this.active()) {
-      return getIconFillColor(this.darkVariant());
-    }
-    return;
-  });
 
   protected readonly iconStrokeClass = computed(() => {
     const isActive = this.active();
