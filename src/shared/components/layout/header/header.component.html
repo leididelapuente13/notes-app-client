@@ -6,11 +6,16 @@
     <div class="flex gap-4 items-center justify-center">
       <app-input
         class="w-[300px]"
+        iconName="search"
         name="search-query"
         placeholder="Search by title, content, or tags…"
       />
       <a routerLink="/settings">
-        <app-icon-settings color="light" />
+        <app-icon-settings
+          size="customMd"
+          lightVariant="neutral-500"
+          darkVariant="neutral-400"
+        />
       </a>
     </div>
   </div>

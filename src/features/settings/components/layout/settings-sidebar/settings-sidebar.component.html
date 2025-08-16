@@ -2,7 +2,12 @@
   <nav>
     <ul class="flex flex-col gap-y-2">
       @for (item of links; track item.path) {
-        <app-nav-item [item]="item" paddingSize="sm" />
+        <app-nav-item
+          [item]="item"
+          paddingSize="md"
+          iconLightActiveColor="neutral-950"
+          iconDarkActiveColor="active"
+        />
       }
     </ul>
     <span

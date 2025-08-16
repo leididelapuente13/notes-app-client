@@ -1,13 +1,6 @@
 <div class="flex gap-x-2 items-center">
-  <app-icon-info
-    [color]="isError() ? 'red' : isDisabled() ? 'light' : 'default'"
-  />
-  <p
-    class="text-preset-6"
-    [class.text-red-500]="isError()"
-    [class.text-neutral-300]="isDisabled()"
-    [class.text-neutral-600]="!isError() && !isDisabled()"
-  >
+  <app-icon-info [lightVariant]="iconStroke()" [darkVariant]="iconStroke()" />
+  <p [class]="`text-preset-6 ${textColor()}`">
     {{ message() }}
   </p>
 </div>

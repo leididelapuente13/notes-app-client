@@ -14,7 +14,14 @@
     >
       <ng-container
         [ngComponentOutlet]="item().icon"
-        [ngComponentOutletInputs]="{ active: rla.isActive }"
+        [ngComponentOutletInputs]="{
+          active: rla.isActive,
+          size: 'md',
+          lightVariant: 'neutral-700',
+          darkVariant: 'neutral-200',
+          lightActiveVariant: iconLightActiveColor(),
+          darkActiveVariant: iconDarkActiveColor(),
+        }"
       ></ng-container>
       <p class="my-auto">{{ item().label }}</p>
       @if (rla.isActive) {
