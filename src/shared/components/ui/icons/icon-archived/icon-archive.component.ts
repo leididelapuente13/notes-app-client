@@ -25,17 +25,6 @@ export class IconArchiveComponent {
 
   protected readonly iconSizeClass = computed(() => getIconSize(this.size()));
 
-  protected readonly iconFillLightClass = computed(() => {
-    const isActive = this.active();
-
-    const lightColor = isActive
-      ? this.lightActiveVariant()
-      : this.lightVariant();
-    const lightClass = getIconStrokeColor(lightColor);
-
-    return lightClass;
-  });
-
   protected readonly iconStrokeClass = computed(() => {
     const isActive = this.active();
 
