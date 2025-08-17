@@ -1,0 +1,24 @@
+<div
+  class="w-full rounded-8 p-2 bg-neutral-100 text-neutral-950 text-preset-5 border border-neutral-200 dark:bg-neutral-800 dark:text-white dark:border-neutral-700"
+>
+  @switch (variant()) {
+    @case ("all-notes") {
+      <p>
+        You don’t have any notes yet. Start a new note to capture your thoughts
+        and ideas.
+      </p>
+    }
+    @case ("archived") {
+      <p>
+        No notes have been archived yet. Move notes here for safekeeping, or
+        <a class="underline" routerLink="/notes/form">create a new note.</a>
+      </p>
+    }
+    @case ("search") {
+      <p>
+        No notes match your search. Try a different keyword or
+        <a class="underline" routerLink="/notes/form">create a new note.</a>
+      </p>
+    }
+  }
+</div>
