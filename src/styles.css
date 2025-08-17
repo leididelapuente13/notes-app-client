@@ -163,3 +163,7 @@
   letter-spacing: var(--text-preset-6-tracking);
   line-height: var(--text-preset-6-line-height);
 }
+
+button:hover {
+  cursor: pointer;
+}

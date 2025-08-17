@@ -14,14 +14,13 @@ import { getIconSize, getIconStrokeColor } from '@shared/utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconArchiveComponent {
-  protected readonly active = input<boolean>(false);
-  protected readonly size = input<IconSizeVariants>('lg');
+  readonly active = input<boolean>(false);
+  readonly size = input<IconSizeVariants>('lg');
 
-  protected readonly lightVariant = input<IconColorVariants>('neutral-600');
-  protected readonly darkVariant = input<IconColorVariants>('neutral-400');
-  protected readonly lightActiveVariant =
-    input<IconColorVariants>('neutral-950');
-  protected readonly darkActiveVariant = input<IconColorVariants>('active');
+  readonly lightVariant = input<IconColorVariants>('neutral-600');
+  readonly darkVariant = input<IconColorVariants>('neutral-400');
+  readonly lightActiveVariant = input<IconColorVariants>('neutral-950');
+  readonly darkActiveVariant = input<IconColorVariants>('active');
 
   protected readonly iconSizeClass = computed(() => getIconSize(this.size()));
 
