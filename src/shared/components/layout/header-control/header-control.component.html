@@ -1,13 +1,33 @@
 <header
-  class="flex justify-between items-center pb-3 md:py-4 border border-neutral-200 dark:border-neutral-800 text-preset-5 lg:hidden"
+  class="flex justify-between items-center text-preset-5 pb-3 border-b border-neutral-200 dark:border-neutral-800 md:py-4 lg:hidden"
 >
-  <div class="text-neutral-600 dark:text-neutral-300">
+  <button
+    class="flex gap-x-1 items-center text-neutral-600 dark:text-neutral-300"
+    (click)="goBack()"
+  >
+    <app-icon-arrow-left lightVariant="neutral-600" darkVariant="neutral-300" />
     <p>Go Back</p>
-  </div>
+  </button>
   <div class="flex items-center gap-4">
-    <app-icon-delete color="neutral" />
-    <app-icon-archived color="white" />
-    <p>Cancel</p>
-    <p>Save Note</p>
+    @for (item of options(); track item) {
+      <button type="button" (click)="handleOptionClick(item)">
+        <ng-container
+          [ngComponentOutlet]="getIcon(item)"
+          [ngComponentOutletInputs]="{
+            size: 'sm',
+            lightVariant: 'neutral-600',
+            darkVariant: 'neutral-300',
+          }"
+        ></ng-container>
+      </button>
+    }
+    <button type="button" (click)="handleCancel()">
+      <p class="text-neutral-600 dark:text-neutral-300">Cancel</p>
+    </button>
+    @if (hasSavingOption()) {
+      <button type="submit" (click)="handleOptionClick('save')">
+        <p class="text-blue-500">Save Note</p>
+      </button>
+    }
   </div>
 </header>
