@@ -8,5 +8,5 @@ import { RouterLink } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmptyStateComponent {
-  variant = input.required<'search' | 'archived' | 'all-notes'>();
+  readonly variant = input.required<'search' | 'archived' | 'all-notes'>();
 }
