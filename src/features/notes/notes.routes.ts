@@ -16,7 +16,7 @@ const notesRouter: Routes = [
         loadComponent: () => TemporalComponentComponent,
       },
       {
-        path: 'details',
+        path: 'details/:id',
         loadComponent: () => TemporalComponentComponent,
       },
       {
