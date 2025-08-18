@@ -4,7 +4,8 @@ import {
   Component,
   inject,
   input,
-  signal, OnInit,
+  signal,
+  OnInit,
   computed,
 } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -24,7 +25,7 @@ export class NoteItemComponent implements OnInit {
   protected readonly isSelected = computed(() => {
     if (!this.selectedNote) return false;
     return this.selectedNote() === this.note().id;
-  })
+  });
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.selectedNote.set(params.get('id'));
