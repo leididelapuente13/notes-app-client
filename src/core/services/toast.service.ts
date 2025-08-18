@@ -6,20 +6,18 @@ import { Toast } from '@shared/interfaces';
 })
 export class ToastService {
   readonly visible = signal<boolean>(false);
-  private readonly toast: Toast = {};
+  private readonly toast = signal<Toast>({});
 
   toggle = () => {
     this.visible.update((visible) => !visible);
   };
 
-  initiateToastData = ({ message, variant, redirectTo }: Toast) => {
-    this.toast.message = message;
-    this.toast.variant = variant;
-    this.toast.redirectTo = redirectTo;
+  initiateToastData = (data: Toast) => {
+    this.toast.set(data)
     this.toggle();
   };
 
-  get toastData() {
-    return this.toast;
+  toastData() {
+    return this.toast();
   }
 }

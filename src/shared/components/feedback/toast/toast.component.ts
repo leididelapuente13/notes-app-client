@@ -24,7 +24,7 @@ export class ToastComponent {
   private readonly toastService = inject(ToastService);
 
   readonly duration = input<number>(4000);
-  readonly toastData = computed(() => this.toastService.toastData);
+  readonly toastData = computed(() => this.toastService.toastData());
   protected readonly visible = this.toastService.visible;
 
   protected readonly toastClasses = computed(() => {

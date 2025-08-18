@@ -1,7 +1,9 @@
 <div [class]="toastClasses()">
   <div class="flex items-center gap-x-2">
     <app-icon-check size="xs" lightVariant="success" darkVariant="success" />
-    <p>{{ toastData().message }}</p>
+    @if (toastData().message) {
+      <p>{{ toastData().message }}</p>
+    }
   </div>
   <div class="flex items-center gap-2">
     @if (toastData().redirectTo) {
