@@ -1,0 +1,24 @@
+<div [class]="toastClasses()">
+  <div class="flex items-center gap-x-2">
+    <app-icon-check size="xs" lightVariant="success" darkVariant="success" />
+    <p>{{ toastData().message }}</p>
+  </div>
+  <div class="flex items-center gap-2">
+    @if (toastData().redirectTo) {
+      <a [routerLink]="`/notes/${toastData().redirectTo}`" class="underline">{{
+        `${toastData().redirectTo} notes` | titlecase
+      }}</a>
+    }
+    <button
+      type="button"
+      class="p-1 rounded-4 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition-colors duration-200"
+      (click)="handleClose()"
+    >
+      <app-icon-close
+        size="xs"
+        lightVariant="neutral-400"
+        darkVariant="neutral-400"
+      />
+    </button>
+  </div>
+</div>
