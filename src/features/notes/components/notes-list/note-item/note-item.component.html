@@ -1,0 +1,27 @@
+<div
+  class="p-2 flex flex-col gap-y-3 rounded-6 hover:cursor-pointer"
+  [routerLink]="['/notes/details', note().id]"
+  [class.bg-neutral-100]="isSelected()"
+  [class.dark:bg-neutral-800]="isSelected()"
+>
+  <p class="text-neutral-950 dark:text-white text-preset-3">
+    {{ note().title }}
+  </p>
+  <div class="flex gap-1 flex-wrap">
+    @for (tag of note().tags; track tag) {
+      <div
+        class="py-0.5 px-1.5 bg-neutral-200 text-neutral-950 text-preset-6 rounded-4 dark:bg-neutral-600 dark:text-white"
+      >
+        <p>{{ tag | titlecase }}</p>
+      </div>
+    }
+  </div>
+  <p class="text-preset-6 text-neutral-600 dark:text-neutral-300">
+    {{ note().updatedAt | date: "dd MMM y" }}
+  </p>
+  @if (!isSelected()) {
+    <span
+      class="block border border-neutral-200 dark:border-neutral-800"
+    ></span>
+  }
+</div>
