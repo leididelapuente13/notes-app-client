@@ -13,7 +13,7 @@ export class ToastService {
   };
 
   initiateToastData = (data: Toast) => {
-    this.toast.set(data)
+    this.toast.set(data);
     this.toggle();
   };
 
