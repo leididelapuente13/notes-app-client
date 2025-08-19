@@ -6,13 +6,12 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { TagsStateService } from '@core/services/tags-state.service';
 import { IconTagComponent } from '@shared/components';
 
 @Component({
   selector: 'notes-tag-item',
-  imports: [TitleCasePipe, IconTagComponent, RouterLink],
+  imports: [TitleCasePipe, IconTagComponent],
   templateUrl: './tag-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
