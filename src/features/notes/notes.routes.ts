@@ -28,6 +28,10 @@ const notesRouter: Routes = [
         loadComponent: () => TemporalComponentComponent,
       },
       {
+        path: 'tags',
+        loadComponent: () => TemporalComponentComponent,
+      },
+      {
         path: 'tags/:tag',
         loadComponent: () => TemporalComponentComponent,
       },
