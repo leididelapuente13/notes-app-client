@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { TagItemComponent } from "./tag-item/tag-item.component";
+import { TagItemComponent } from './tag-item/tag-item.component';
 
 @Component({
   selector: 'notes-tags-list',
@@ -8,7 +8,5 @@ import { TagItemComponent } from "./tag-item/tag-item.component";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TagsListComponent {
-
   readonly tags = input<string[]>();
-
 }

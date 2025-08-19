@@ -1,8 +1,14 @@
 import { TitleCasePipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import {RouterLink } from '@angular/router';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  input,
+} from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { TagsStateService } from '@core/services/tags-state.service';
-import { IconTagComponent } from "@shared/components";
+import { IconTagComponent } from '@shared/components';
 
 @Component({
   selector: 'notes-tag-item',

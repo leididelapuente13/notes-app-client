@@ -4,17 +4,17 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter, map, startWith } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TagsStateService {
   private readonly router = inject(Router);
 
   private readonly currentUrl = toSignal(
     this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
+      filter((event) => event instanceof NavigationEnd),
       map(() => this.router.url),
-      startWith(this.router.url)
-    )
+      startWith(this.router.url),
+    ),
   );
 
   readonly selectedTag = computed(() => {
