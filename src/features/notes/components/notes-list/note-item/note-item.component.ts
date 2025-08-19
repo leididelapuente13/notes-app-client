@@ -23,9 +23,10 @@ export class NoteItemComponent implements OnInit {
   readonly note = input.required<Note>();
   protected readonly selectedNote = signal<string | null>(null);
   protected readonly isSelected = computed(() => {
-    if (!this.selectedNote) return false;
+    if (!this.selectedNote()) return false;
     return this.selectedNote() === this.note().id;
   });
+
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       this.selectedNote.set(params.get('id'));

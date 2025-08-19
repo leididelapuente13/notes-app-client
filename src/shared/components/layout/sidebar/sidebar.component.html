@@ -1,8 +1,11 @@
 <aside
   class="hidden bg-white dark:bg-neutral-950 lg:flex flex-col gap-4 px-4 py-3 border-solid border-r border-neutral-200 dark:border-neutral-200/30 w-(--sidebar-width) min-h-screen fixed left-0 top-0 z-10"
 >
-  <app-logo class="pt-3 pb-4" />
+  <app-logo class="px-4 pt-3 pb-4" />
   <app-nav />
   <span class="border-t border-neutral-200 dark:border-neutral-200/20"></span>
-  <!-- TODO: Add tag list component -->
+  <div>
+    <p class="text-preset-4 text-neutral-500 mb-2 px-4">Tags</p>
+    <notes-tags-list [tags]="['not', 'fine', 'at', 'all', 'fuck', 'off']" />
+  </div>
 </aside>
