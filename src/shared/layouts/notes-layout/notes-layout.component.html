@@ -11,9 +11,7 @@
       >
         <router-outlet />
       </section>
-      <aside
-        class="hidden xl:block w-[258px] border-solid border-l border-neutral-200 dark:border-neutral-200/30 overflow-y-auto flex-shrink-0"
-      ></aside>
+      <app-right-menu [optionsToDisplay]="['delete', 'restore']" />
     </main>
     <app-bottom-navigation />
   </div>

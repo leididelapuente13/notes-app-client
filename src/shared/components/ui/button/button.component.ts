@@ -24,7 +24,7 @@ export class ButtonComponent {
   isDangerButton = input<boolean>(false);
   alignContent = input<'left' | 'center'>('center');
   disabled = input<boolean>(false);
-  onClick = input.required<() => void>();
+  onClick = input.required<(args?: unknown) => void>();
 
   protected readonly isDarkMode = computed(() =>
     this.document.body.classList.contains('dark'),
@@ -52,9 +52,44 @@ export class ButtonComponent {
     return 'btn-disabled';
   });
 
-  clickHandler() {
+  clickHandler(args?: unknown) {
     if (this.disabled()) return;
     const click = this.onClick();
-    click();
+    click(args);
   }
+
+  readonly iconColor = computed(() => {
+    switch (this.variant()) {
+      case 'primary':
+        return {
+          lightVariant: 'white',
+          darkVariant: 'white',
+        };
+      case 'secondary':
+        return this.isDarkMode()
+          ? {
+              lightVariant: 'white',
+              darkVariant: 'white',
+            }
+          : {
+              lightVariant: 'black',
+              darkVariant: 'white',
+            };
+      case 'border':
+        return {
+          lightVariant: 'black',
+          darkVariant: 'white',
+        };
+      case 'danger':
+        return {
+          lightVariant: 'white',
+          darkVariant: 'white',
+        };
+      default:
+        return {
+          lightVariant: 'white',
+          darkVariant: 'white',
+        };
+    }
+  });
 }

@@ -8,7 +8,10 @@
   (click)="clickHandler()"
 >
   @if (icon()) {
-    <ng-container [ngComponentOutlet]="icon()!"></ng-container>
+    <ng-container
+      [ngComponentOutlet]="icon()!"
+      [ngComponentOutletInputs]="iconColor()"
+    ></ng-container>
   }
   <p>{{ label() }}</p>
 </button>
