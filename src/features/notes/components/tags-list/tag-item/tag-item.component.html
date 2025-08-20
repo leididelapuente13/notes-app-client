@@ -1,0 +1,17 @@
+<div
+  class="flex gap-x-2 px-3 py-2.5 items-center hover:cursor-pointer rounded-8"
+  tabindex="0"
+  (click)="handleTagClick()"
+  (keyup.enter)="handleTagClick()"
+  [class.bg-neutral-100]="isSelected()"
+  [class.dark:bg-neutral-800]="isSelected()"
+>
+  <app-icon-tag
+    size="md"
+    darkVariant="neutral-200"
+    lightVariant="neutral-700"
+  />
+  <p class="text-preset-4 text-neutral-700 dark:text-neutral-200">
+    {{ tag() | titlecase }}
+  </p>
+</div>

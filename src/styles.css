@@ -167,3 +167,43 @@
 button:hover {
   cursor: pointer;
 }
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-blue-500) var(--color-neutral-200);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-50);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-blue-500);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue-700);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-neutral-950);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-blue-500);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue-700);
+}
+
+.dark * {
+  scrollbar-color: var(--color-neutral-600) var(--color-neutral-800);
+}
