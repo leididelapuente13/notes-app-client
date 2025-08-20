@@ -1,0 +1,12 @@
+<aside
+  class="hidden bg-white pl-[32px] pr-[16px] overflow-y-auto flex-shrink-0 pt-[20px] h-full border-solid border-r border-neutral-200 lg:block lg:w-[290px] xl:w-[290px] dark:border-neutral-200/30 dark:bg-neutral-950"
+>
+  <app-button variant="primary" label="+ Create New Note" [onClick]="navigateToForm" />
+  <notes-list [notes]="notes" />
+</aside>
+<section
+  class="bg-white flex-1 h-screen overflow-y-auto rounded-t-12 lg:rounded-t-0 lg:w-[588px] xl:w-[40%] dark:bg-neutral-950"
+>
+  <notes-list [notes]="notes" class="lg:hidden" />
+</section>
+<app-right-menu [optionsToDisplay]="['delete', 'archive']" />
