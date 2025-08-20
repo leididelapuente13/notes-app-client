@@ -48,9 +48,7 @@ export class RightMenuComponent {
 
   protected readonly options = computed(() => {
     const toDisplay = this.optionsToDisplay();
-    return this.optionsMap.filter(option =>
-      toDisplay?.includes(option.key)
-    );
+    return this.optionsMap.filter((option) => toDisplay?.includes(option.key));
   });
 
   protected handleOptionClicked(option: RightMenuOptions) {
