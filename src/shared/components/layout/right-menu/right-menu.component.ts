@@ -1,6 +1,8 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
+  input,
   output,
   Type,
 } from '@angular/core';
@@ -19,9 +21,10 @@ import { ButtonComponent } from '@shared/components/ui';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RightMenuComponent {
+  readonly optionsToDisplay = input<RightMenuOptions[]>();
   readonly clickedOption = output<RightMenuOptions>();
 
-  protected readonly options: {
+  private readonly optionsMap: {
     label: string;
     icon: Type<unknown>;
     key: RightMenuOptions;
@@ -42,6 +45,13 @@ export class RightMenuComponent {
       key: 'restore',
     },
   ];
+
+  protected readonly options = computed(() => {
+    const toDisplay = this.optionsToDisplay();
+    return this.optionsMap.filter(option =>
+      toDisplay?.includes(option.key)
+    );
+  });
 
   protected handleOptionClicked(option: RightMenuOptions) {
     this.clickedOption.emit(option);
