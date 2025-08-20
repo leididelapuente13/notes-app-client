@@ -8,5 +8,5 @@ import { TagItemComponent } from './tag-item/tag-item.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TagsListComponent {
-  readonly tags = input<string[]>();
+  readonly tags = input<string[]>([]);
 }
