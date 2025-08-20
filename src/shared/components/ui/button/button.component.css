@@ -1,10 +1,12 @@
 button {
+  width: 100%;
   font-size: var(--text-preset-4);
   padding-block: 12px;
   padding-inline: 16px;
   border-radius: 8px;
   display: flex;
   column-gap: 8px;
+  justify-content: center;
   align-items: center;
   text-align: center;
   &:hover {
@@ -66,11 +68,13 @@ button {
 .btn-border {
   background-color: inherit;
   border: solid 1px var(--color-neutral-300);
-  &:hover {
+
+  /* &:hover {
     background-color: var(--color-neutral-100);
     color: var(--color-neutral-600);
     border: solid 1px transparent;
-  }
+  } */
+
   &:focus {
     border: solid 1px var(--color-neutral-950);
   }
