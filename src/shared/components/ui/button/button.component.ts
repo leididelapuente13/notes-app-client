@@ -5,6 +5,8 @@ import {
   computed,
   inject,
   input,
+  OnInit,
+  output,
   Type,
 } from '@angular/core';
 
@@ -15,7 +17,7 @@ import {
   styleUrl: './button.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent {
+export class ButtonComponent implements OnInit {
   document = inject(DOCUMENT);
 
   icon = input<Type<unknown>>();
@@ -24,7 +26,7 @@ export class ButtonComponent {
   isDangerButton = input<boolean>(false);
   alignContent = input<'left' | 'center'>('center');
   disabled = input<boolean>(false);
-  onClick = input.required<(args?: unknown) => void>();
+  clicked = output<boolean>();
 
   protected readonly isDarkMode = computed(() =>
     this.document.body.classList.contains('dark'),
@@ -52,10 +54,8 @@ export class ButtonComponent {
     return 'btn-disabled';
   });
 
-  clickHandler(args?: unknown) {
-    if (this.disabled()) return;
-    const click = this.onClick();
-    click(args);
+  clickHandler() {
+    this.clicked.emit(true);
   }
 
   readonly iconColor = computed(() => {
@@ -92,4 +92,8 @@ export class ButtonComponent {
         };
     }
   });
+
+  ngOnInit(): void {
+    this.clicked.emit(false);
+  }
 }
