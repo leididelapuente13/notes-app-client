@@ -1,0 +1,10 @@
+<aside
+  class="hidden bg-white pl-[32px] pr-[16px] overflow-y-auto flex-shrink-0 pt-[20px] h-full border-solid border-r border-neutral-200 lg:flex flex-col gap-y-4 lg:w-[290px] xl:w-[290px] dark:border-neutral-200/30 dark:bg-neutral-950"
+>
+  <app-button
+    variant="primary"
+    label="+ Create New Note"
+    (clicked)="navigateToForm.set($event)"
+  />
+  <notes-list [notes]="notes()" />
+</aside>

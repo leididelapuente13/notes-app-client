@@ -1,19 +1,22 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RightMenuComponent } from '@shared/components/layout/right-menu/right-menu.component';
 import { NotesListComponent } from '@features/notes/components/notes-list/notes-list.component';
 import { Note } from '@features/notes/interfaces/Note.interface';
-import { ButtonComponent } from '@shared/components';
-import { Router } from '@angular/router';
+import { SectionTitleComponent } from '@shared/components';
+import { SidebarComponent } from '@features/notes/components/sidebar/sidebar.component';
 
 @Component({
   selector: 'notes-all-notes-page',
-  imports: [RightMenuComponent, NotesListComponent, ButtonComponent],
+  imports: [
+    RightMenuComponent,
+    NotesListComponent,
+    SectionTitleComponent,
+    SidebarComponent,
+  ],
   templateUrl: './all-notes-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 class AllNotesPageComponent {
-  private readonly router = inject(Router);
-
   protected readonly notes: Note[] = [
     {
       id: '1',
@@ -40,9 +43,5 @@ class AllNotesPageComponent {
       archived: true,
     },
   ];
-
-  protected navigateToForm() {
-    this.router.navigate(['/notes/form']);
-  }
 }
 export default AllNotesPageComponent;

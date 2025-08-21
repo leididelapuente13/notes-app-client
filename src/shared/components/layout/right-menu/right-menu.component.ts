@@ -4,6 +4,7 @@ import {
   computed,
   input,
   output,
+  signal,
   Type,
 } from '@angular/core';
 import {
@@ -22,7 +23,8 @@ import { ButtonComponent } from '@shared/components/ui';
 })
 export class RightMenuComponent {
   readonly optionsToDisplay = input<RightMenuOptions[]>();
-  readonly clickedOption = output<RightMenuOptions>();
+  readonly selectedOption = output<RightMenuOptions>();
+  readonly clicked = signal<boolean>(false);
 
   private readonly optionsMap: {
     label: string;
@@ -52,7 +54,7 @@ export class RightMenuComponent {
   });
 
   protected handleOptionClicked(option: RightMenuOptions) {
-    this.clickedOption.emit(option);
+    this.selectedOption.emit(option);
   }
 
   protected getClickHandler(option: RightMenuOptions) {

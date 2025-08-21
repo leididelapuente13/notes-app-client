@@ -6,7 +6,7 @@
       variant="border"
       [label]="option.label"
       [icon]="option.icon"
-      [onClick]="getClickHandler(option.key)"
+      (clicked)="clicked.set($event)"
     />
   }
 </aside>

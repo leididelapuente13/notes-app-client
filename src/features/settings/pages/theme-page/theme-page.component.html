@@ -12,7 +12,7 @@
     <app-button
       variant="primary"
       label="Apply Changes"
-      [onClick]="updateTheme"
+      (clicked)="clickedUpdateTheme.set($event)"
     />
   </div>
 </article>
