@@ -1,9 +1,12 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RightMenuComponent } from '@shared/components/layout/right-menu/right-menu.component';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RightMenuComponent } from '@features/notes/components/right-menu/right-menu.component';
 import { NotesListComponent } from '@features/notes/components/notes-list/notes-list.component';
 import { Note } from '@features/notes/interfaces/Note.interface';
 import { SectionTitleComponent } from '@shared/components';
 import { SidebarComponent } from '@features/notes/components/sidebar/sidebar.component';
+import { ActivatedRoute } from '@angular/router';
+import { NoteDetailsComponent } from '@features/notes/components/note-details/note-details.component';
+import { RightMenuOptions } from '@shared/interfaces';
 
 @Component({
   selector: 'notes-all-notes-page',
@@ -12,11 +15,15 @@ import { SidebarComponent } from '@features/notes/components/sidebar/sidebar.com
     NotesListComponent,
     SectionTitleComponent,
     SidebarComponent,
+    NoteDetailsComponent,
   ],
   templateUrl: './all-notes-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 class AllNotesPageComponent {
+  private readonly activeRoute = inject(ActivatedRoute);
+
+  protected menuControlOptions: RightMenuOptions[] = ['delete', 'archive'];
   protected readonly notes: Note[] = [
     {
       id: '1',
@@ -42,6 +49,26 @@ class AllNotesPageComponent {
       content: 'This note is archived.',
       archived: true,
     },
+    {
+      id: '4',
+      title: 'Archived Note',
+      tags: ['archive'],
+      updatedAt: new Date('2024-05-28T15:45:00Z'),
+      content: 'This note is archived.',
+      archived: true,
+    },
+    {
+      id: '5',
+      title: 'Archived Note',
+      tags: ['archive'],
+      updatedAt: new Date('2024-05-28T15:45:00Z'),
+      content: 'This note is archived.',
+      archived: true,
+    },
   ];
+
+  protected getRouteParams() {
+    return this.activeRoute.snapshot.paramMap.get('id') ?? undefined;
+  }
 }
 export default AllNotesPageComponent;
