@@ -1,5 +1,5 @@
 <ul class="flex flex-col gap-y-1 w-full h-full overflow-y-auto">
   @for (note of notes(); track note.id) {
-    <notes-note-item [note]="note" />
+    <notes-note-item [note]="note" [path]="path()" />
   }
 </ul>
