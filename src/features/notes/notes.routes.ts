@@ -13,6 +13,10 @@ const notesRouter: Routes = [
         loadComponent: () => AllNotesPageComponent,
       },
       {
+        path: 'all/:id',
+        loadComponent: () => AllNotesPageComponent,
+      },
+      {
         path: 'archived',
         loadComponent: () => TemporalComponentComponent,
       },
