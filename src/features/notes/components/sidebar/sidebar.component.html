@@ -6,5 +6,5 @@
     label="+ Create New Note"
     (clicked)="navigateToForm.set($event)"
   />
-  <notes-list [notes]="notes()" />
+  <notes-list [notes]="notes()" [path]="notesRedirectionPath()" />
 </aside>
