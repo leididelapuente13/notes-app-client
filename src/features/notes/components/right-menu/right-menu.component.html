@@ -1,0 +1,12 @@
+<aside
+  class="bg-white pl-4 pr-8 py-5 hidden lg:flex flex-col gap-y-3 w-[258px] h-full border-solid border-l border-neutral-200 dark:border-neutral-200/30 dark:bg-neutral-950 flex-shrink-0"
+>
+  @for (option of options(); track option.key) {
+    <app-button
+      variant="border"
+      [label]="option.label"
+      [icon]="option.icon"
+      (clicked)="handleClickedOption(option.key)"
+    />
+  }
+</aside>
