@@ -17,7 +17,7 @@ import {
 import { HeaderControlOptions } from '@shared/interfaces';
 
 @Component({
-  selector: 'app-header-control',
+  selector: 'notes-header-control',
   imports: [NgComponentOutlet, IconArrowLeftComponent],
   templateUrl: './header-control.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
