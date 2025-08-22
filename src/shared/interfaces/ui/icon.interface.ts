@@ -4,7 +4,7 @@ export type IconSizeVariants =
   | 'md'
   | 'lg'
   | 'xl'
-  | 'customXs'
+  | 'customSm'
   | 'customMd'
   | 'customLg';
 

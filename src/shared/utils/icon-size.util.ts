@@ -7,7 +7,7 @@ export const ICON_SIZES: Record<IconSizeVariants, IconClasses> = {
   md: { class: 'w-5 h-5', pixels: '20x20' },
   lg: { class: 'w-6 h-6', pixels: '24x24' },
   xl: { class: 'w-8 h-8', pixels: '32x32' },
-  customXs: { class: 'w-[6px] h-[10px]', pixels: '6x10' },
+  customSm: { class: 'w-[12px] h-[11.99px]', pixels: '12x11.99' },
   customMd: { class: 'w-[18.5px] h-[19.5px]', pixels: '18.5x19.5' },
   customLg: { class: 'w-6 h-[25px]', pixels: '24x25' },
 };
