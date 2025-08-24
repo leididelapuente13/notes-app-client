@@ -1,15 +1,16 @@
 @if (noteIdParam() && !formVisible()) {
   <article
     class="h-full bg-white py-5 px-6 flex flex-col gap-y-4 dark:bg-neutral-950"
-    tabindex="0"
-    (click)="showForm()"
-    (keydown)="showForm()"
   >
-    <notes-header-control [options]="" />
+    <notes-header-control
+      [options]="headerControlOptions()"
+      (optionClicked)="headerControlOptionClicked.set($event)"
+      (formReset)="formReset.set($event)"
+    />
     <header
       class="flex flex-col gap-y-3 pb-3 md:pb-4 border-b border-neutral-200 dark:border-neutral-800"
     >
-      <app-title [title]="exampleNote().title" />
+      <app-title [title]="exampleNote().title" (click)="showForm()" />
       <div
         class="grid grid-cols-2 gap-x-2 gap-y-[9px] w-fit text-preset-5 text-neutral-700 dark:text-neutral-300"
       >
@@ -22,7 +23,12 @@
           <p>Tags</p>
         </div>
         <div>
-          <p class="text-neutral-950 dark:text-white">
+          <p
+            class="text-neutral-950 dark:text-white"
+            tabindex="0"
+            (keydown)="showForm()"
+            (click)="showForm()"
+          >
             {{ exampleNote().tags.join(", ") | titlecase }}
           </p>
         </div>
@@ -39,12 +45,17 @@
         </div>
       </div>
     </header>
-    <div class="text-preset-5 text-neutral-800 dark:text-neutral-100">
+    <div
+      class="text-preset-5 text-neutral-800 dark:text-neutral-100"
+      tabindex="0"
+      (keydown)="showForm()"
+      (click)="showForm()"
+    >
       {{ exampleNote().content }}
     </div>
   </article>
 }
 
 @if (noteIdParam() && formVisible()) {
-  <notes-form [noteId]="noteIdParam()" />
+  <notes-form [noteId]="noteIdParam()" [resetForm]="formReset()" />
 }

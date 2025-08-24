@@ -37,6 +37,10 @@ export class NoteDetailsComponent {
 
   readonly headerControlOptions = input.required<HeaderControlOptions[]>();
 
+  readonly formReset = signal<boolean>(false);
+  readonly headerControlOptionClicked = signal<HeaderControlOptions | null>(
+    null,
+  );
   protected readonly formVisible = signal<boolean>(false);
   protected readonly exampleNote = signal<Note>({
     id: '2',
@@ -61,5 +65,9 @@ export class NoteDetailsComponent {
       this.noteIdParam.set(newNoteId);
       this.formVisible.set(false);
     });
+  });
+
+  private readonly debugEffect = effect(() => {
+    console.log(this.headerControlOptionClicked());
   });
 }

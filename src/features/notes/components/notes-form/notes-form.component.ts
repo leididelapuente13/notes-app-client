@@ -27,6 +27,8 @@ import { HeaderControlComponent } from '../header-control/header-control.compone
 })
 export class NotesFormComponent {
   readonly noteId = input<string>();
+
+  readonly resetForm = input<boolean>(false);
   readonly note = signal<Note>({
     id: '2',
     title: 'Angular Signals',
