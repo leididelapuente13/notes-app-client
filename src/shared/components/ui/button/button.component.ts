@@ -5,7 +5,6 @@ import {
   computed,
   inject,
   input,
-  OnInit,
   output,
   Type,
 } from '@angular/core';
@@ -17,7 +16,7 @@ import {
   styleUrl: './button.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonComponent implements OnInit {
+export class ButtonComponent {
   document = inject(DOCUMENT);
 
   icon = input<Type<unknown>>();
@@ -93,8 +92,4 @@ export class ButtonComponent implements OnInit {
         };
     }
   });
-
-  ngOnInit(): void {
-    this.clicked.emit(false);
-  }
 }
