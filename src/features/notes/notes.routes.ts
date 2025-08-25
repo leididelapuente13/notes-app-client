@@ -14,18 +14,22 @@ const notesRouter: Routes = [
       {
         path: 'all',
         loadComponent: () => AllNotesPageComponent,
+        title: 'All Notes',
       },
       {
         path: 'all/:id',
         loadComponent: () => AllNotesPageComponent,
+        title: 'All Notes',
       },
       {
         path: 'archived',
         loadComponent: () => ArchivedNotesPageComponent,
+        title: 'Archived',
       },
       {
         path: 'archived/:id',
         loadComponent: () => ArchivedNotesPageComponent,
+        title: 'Archived',
       },
       {
         path: 'details/:id',
@@ -34,22 +38,27 @@ const notesRouter: Routes = [
       {
         path: 'form',
         loadComponent: () => TemporalComponentComponent,
+        title: 'All Notes',
       },
       {
         path: 'search',
         loadComponent: () => TemporalComponentComponent,
+        title: 'Showing results for',
       },
       {
         path: 'tags',
         loadComponent: () => TagsPageComponent,
+        title: 'Tags',
       },
       {
         path: 'tags/:tag',
         loadComponent: () => TaggedNotesPageComponent,
+        title: 'Notes tagged',
       },
       {
         path: 'tags/:tag/:id',
         loadComponent: () => TaggedNotesPageComponent,
+        title: 'Notes tagged',
       },
     ],
   },
