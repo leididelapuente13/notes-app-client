@@ -7,6 +7,6 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MessageComponent {
-  readonly variant = input.required<'archived' | 'search' | 'tag'>();
+  readonly variant = input.required<'archived' | 'search' | 'tags'>();
   readonly match = input<string>('');
 }

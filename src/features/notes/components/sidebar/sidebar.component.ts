@@ -6,13 +6,13 @@ import {
   signal,
 } from '@angular/core';
 import { NotesListComponent } from '../notes-list/notes-list.component';
-import { ButtonComponent } from '@shared/components';
+import { ButtonComponent, MessageComponent } from '@shared/components';
 import { Note } from '@features/notes/interfaces/Note.interface';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'notes-sidebar',
-  imports: [NotesListComponent, ButtonComponent],
+  imports: [NotesListComponent, ButtonComponent, MessageComponent],
   templateUrl: './sidebar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
