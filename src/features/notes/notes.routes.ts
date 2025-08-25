@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import TemporalComponentComponent from './components/temporal-component/temporal-component.component';
 import { NotesLayoutComponent } from '@shared/layouts/notes-layout/notes-layout.component';
 import AllNotesPageComponent from './pages/all-notes-page/all-notes-page.component';
+import ArchivedNotesPageComponent from './pages/archived-notes-page/archived-notes-page.component';
 
 const notesRouter: Routes = [
   {
@@ -18,7 +19,11 @@ const notesRouter: Routes = [
       },
       {
         path: 'archived',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => ArchivedNotesPageComponent,
+      },
+      {
+        path: 'archived/:id',
+        loadComponent: () => ArchivedNotesPageComponent,
       },
       {
         path: 'details/:id',

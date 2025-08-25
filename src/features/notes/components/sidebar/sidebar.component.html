@@ -6,5 +6,8 @@
     label="+ Create New Note"
     (clicked)="navigateToForm.set($event)"
   />
+  @if (notesRedirectionPath() !== "all") {
+    <app-message variant="archived" />
+  }
   <notes-list [notes]="notes()" [path]="notesRedirectionPath()" />
 </aside>

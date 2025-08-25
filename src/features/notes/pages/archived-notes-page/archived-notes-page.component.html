@@ -1,0 +1,19 @@
+<div class="flex flex-1 h-full min-h-0">
+  <notes-sidebar [notes]="notes" notesRedirectionPath="archived" />
+  <section
+    class="h-full bg-white flex-1 overflow-y-auto rounded-t-12 lg:rounded-t-0 lg:w-[588px] xl:w-[40%] dark:bg-neutral-950 flex flex-col min-h-0"
+  >
+    <div
+      class="min-h-full flex flex-col gap-y-4 py-5 px-4 md:py-6 md:px-8 lg:hidden flex-shrink-0"
+      [class.hidden]="getRouteParams()"
+    >
+      <app-title title="Archived Notes" />
+      <app-message variant="archived" />
+      <notes-list [notes]="notes" class="lg:hidden" path="all" />
+    </div>
+    <div class="flex-1 w-full min-h-0">
+      <notes-note-details [headerControlOptions]="menuControlOptions" />
+    </div>
+  </section>
+  <notes-right-menu [optionsToDisplay]="menuControlOptions" />
+</div>
