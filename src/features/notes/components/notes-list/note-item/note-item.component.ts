@@ -8,27 +8,33 @@ import {
   OnInit,
   computed,
 } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Note } from '@features/notes/interfaces/Note.interface';
 
 @Component({
   selector: 'notes-note-item',
-  imports: [DatePipe, TitleCasePipe, RouterLink],
+  imports: [DatePipe, TitleCasePipe],
   templateUrl: './note-item.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NoteItemComponent implements OnInit {
-  private readonly route = inject(ActivatedRoute);
+  private readonly route = inject(Router);
+  private readonly activeRoute = inject(ActivatedRoute);
 
   readonly note = input.required<Note>();
+  readonly path = input.required<'all' | 'archived' | 'tags' | 'search'>();
   protected readonly selectedNote = signal<string | null>(null);
   protected readonly isSelected = computed(() => {
     if (!this.selectedNote()) return false;
     return this.selectedNote() === this.note().id;
   });
 
+  protected navigateToNoteDetails() {
+    this.route.navigate([`/notes/${this.path()}`, this.note().id]);
+  }
+
   ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
+    this.activeRoute.paramMap.subscribe((params) => {
       this.selectedNote.set(params.get('id'));
     });
   }

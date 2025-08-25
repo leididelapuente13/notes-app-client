@@ -5,6 +5,7 @@ import {
   computed,
   inject,
   input,
+  output,
   Type,
 } from '@angular/core';
 
@@ -24,7 +25,7 @@ export class ButtonComponent {
   isDangerButton = input<boolean>(false);
   alignContent = input<'left' | 'center'>('center');
   disabled = input<boolean>(false);
-  onClick = input.required<(args?: unknown) => void>();
+  clicked = output<boolean>();
 
   protected readonly isDarkMode = computed(() =>
     this.document.body.classList.contains('dark'),
@@ -52,10 +53,9 @@ export class ButtonComponent {
     return 'btn-disabled';
   });
 
-  clickHandler(args?: unknown) {
+  clickHandler() {
     if (this.disabled()) return;
-    const click = this.onClick();
-    click(args);
+    this.clicked.emit(true);
   }
 
   readonly iconColor = computed(() => {

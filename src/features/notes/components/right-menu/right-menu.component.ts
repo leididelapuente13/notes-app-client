@@ -3,7 +3,7 @@ import {
   Component,
   computed,
   input,
-  output,
+  signal,
   Type,
 } from '@angular/core';
 import {
@@ -15,14 +15,14 @@ import { RightMenuOptions } from '@shared/interfaces';
 import { ButtonComponent } from '@shared/components/ui';
 
 @Component({
-  selector: 'app-right-menu',
+  selector: 'notes-right-menu',
   imports: [ButtonComponent],
   templateUrl: './right-menu.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RightMenuComponent {
   readonly optionsToDisplay = input<RightMenuOptions[]>();
-  readonly clickedOption = output<RightMenuOptions>();
+  readonly clickedOption = signal<RightMenuOptions | null>(null);
 
   private readonly optionsMap: {
     label: string;
@@ -48,16 +48,12 @@ export class RightMenuComponent {
 
   protected readonly options = computed(() => {
     const toDisplay = this.optionsToDisplay();
-    return this.optionsMap.filter(option =>
-      toDisplay?.includes(option.key)
-    );
+    return this.optionsMap.filter((option) => toDisplay?.includes(option.key));
   });
 
-  protected handleOptionClicked(option: RightMenuOptions) {
-    this.clickedOption.emit(option);
-  }
-
-  protected getClickHandler(option: RightMenuOptions) {
-    return () => this.handleOptionClicked(option);
+  protected handleClickedOption(clicked: boolean, option: RightMenuOptions) {
+    if (clicked) {
+      this.clickedOption.set(option);
+    }
   }
 }

@@ -17,7 +17,7 @@ import {
 import { HeaderControlOptions } from '@shared/interfaces';
 
 @Component({
-  selector: 'app-header-control',
+  selector: 'notes-header-control',
   imports: [NgComponentOutlet, IconArrowLeftComponent],
   templateUrl: './header-control.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,7 +30,7 @@ export class HeaderControlComponent {
     'navigate-back',
   );
 
-  readonly formReset = output<void>();
+  readonly formReset = output<boolean>();
   readonly optionClicked = output<HeaderControlOptions>();
 
   protected readonly iconMap = signal(
@@ -55,7 +55,7 @@ export class HeaderControlComponent {
         this.goBack();
         break;
       case 'reset-form':
-        this.formReset.emit();
+        this.formReset.emit(true);
         break;
     }
   };

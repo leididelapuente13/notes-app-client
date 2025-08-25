@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
   signal,
 } from '@angular/core';
@@ -30,6 +31,14 @@ class ThemePageComponent {
   themeSelectionComponent = new SettingsSelectionComponent<Themes>();
   currentTheme = computed(() => this.themeService.getTheme());
   themeSelection = signal<Themes | null>(this.currentTheme());
+  clickedUpdateTheme = signal<boolean>(false);
+
+  private readonly updateThemeEffect = effect(() => {
+    if (this.clickedUpdateTheme()) {
+      this.updateTheme();
+      this.clickedUpdateTheme.set(false);
+    }
+  });
 
   readonly selections: Selection<Themes>[] = [
     {

@@ -5,7 +5,6 @@ import {
   HeaderComponent,
   SidebarComponent,
 } from '@shared/components';
-import { RightMenuComponent } from '@shared/components/layout/right-menu/right-menu.component';
 
 @Component({
   selector: 'app-notes-layout',
@@ -14,7 +13,6 @@ import { RightMenuComponent } from '@shared/components/layout/right-menu/right-m
     RouterOutlet,
     SidebarComponent,
     BottomNavigationComponent,
-    RightMenuComponent,
   ],
   templateUrl: './notes-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

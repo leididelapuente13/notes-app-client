@@ -33,11 +33,15 @@
         class="block w-full h-[1px] bg-neutral-200 dark:bg-neutral-600"
       ></span>
       <footer class="w-full px-5 py-4 flex justify-end gap-4">
-        <app-button label="Cancel" variant="secondary" [onClick]="onCancel" />
+        <app-button
+          label="Cancel"
+          variant="secondary"
+          (clicked)="clickedCancel.set($event)"
+        />
         <app-button
           [label]="buttonLabel()"
           [variant]="buttonVariant()"
-          [onClick]="onConfirm"
+          (clicked)="clickedConfirm.emit($event)"
         />
       </footer>
     </article>

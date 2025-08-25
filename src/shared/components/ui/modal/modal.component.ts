@@ -3,8 +3,11 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
   input,
+  output,
+  signal,
 } from '@angular/core';
 import { IconArchiveComponent, IconDeleteComponent } from '../icons';
 import { ModalConfig, ModalVariants } from '@shared/interfaces';
@@ -23,6 +26,16 @@ export class ModalComponent {
   readonly visible = computed(() => this.modalService.isVisible());
   readonly variant = input.required<ModalVariants>();
   readonly onConfirm = input.required<() => void>();
+
+  readonly clickedCancel = signal<boolean>(false);
+  readonly clickedConfirm = output<boolean>();
+
+  private readonly cancelEffect = effect(() => {
+    if (this.clickedCancel()) {
+      this.onCancel();
+      this.clickedCancel.set(false);
+    }
+  });
 
   private readonly _modalConfigMap: Record<ModalVariants, ModalConfig> = {
     archive: {
