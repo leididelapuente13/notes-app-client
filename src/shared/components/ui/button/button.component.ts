@@ -55,6 +55,7 @@ export class ButtonComponent implements OnInit {
   });
 
   clickHandler() {
+    if (this.disabled()) return;
     this.clicked.emit(true);
   }
 
