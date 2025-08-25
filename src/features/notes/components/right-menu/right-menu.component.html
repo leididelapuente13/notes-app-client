@@ -6,7 +6,7 @@
       variant="border"
       [label]="option.label"
       [icon]="option.icon"
-      (clicked)="handleClickedOption(option.key)"
+      (clicked)="handleClickedOption($event, option.key)"
     />
   }
 </aside>

@@ -66,8 +66,4 @@ export class NoteDetailsComponent {
       this.formVisible.set(false);
     });
   });
-
-  private readonly debugEffect = effect(() => {
-    console.log(this.headerControlOptionClicked());
-  });
 }

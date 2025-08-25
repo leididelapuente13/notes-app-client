@@ -51,8 +51,9 @@ export class RightMenuComponent {
     return this.optionsMap.filter((option) => toDisplay?.includes(option.key));
   });
 
-  protected handleClickedOption(option: RightMenuOptions) {
-    console.log(option);
-    this.clickedOption.set(option);
+  protected handleClickedOption(clicked: boolean, option: RightMenuOptions) {
+    if (clicked) {
+      this.clickedOption.set(option);
+    }
   }
 }
