@@ -20,7 +20,7 @@ export class SidebarComponent {
   private readonly router = inject(Router);
   readonly notes = input<Note[]>([]);
   readonly notesRedirectionPath = input.required<
-    'all' | 'archived' | 'tags' | 'search'
+    'all' | 'archived' | 'tags' | 'search' | `/tags/${string}`
   >();
   readonly navigateToForm = signal<boolean>(false);
 
