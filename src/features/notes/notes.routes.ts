@@ -3,6 +3,8 @@ import TemporalComponentComponent from './components/temporal-component/temporal
 import { NotesLayoutComponent } from '@shared/layouts/notes-layout/notes-layout.component';
 import AllNotesPageComponent from './pages/all-notes-page/all-notes-page.component';
 import ArchivedNotesPageComponent from './pages/archived-notes-page/archived-notes-page.component';
+import TaggedNotesPageComponent from './pages/tagged-notes-page/tagged-notes-page.component';
+import TagsPageComponent from './pages/tags-page/tags-page.component';
 
 const notesRouter: Routes = [
   {
@@ -39,11 +41,15 @@ const notesRouter: Routes = [
       },
       {
         path: 'tags',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => TagsPageComponent,
       },
       {
         path: 'tags/:tag',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => TaggedNotesPageComponent,
+      },
+      {
+        path: 'tags/:tag/:id',
+        loadComponent: () => TaggedNotesPageComponent,
       },
     ],
   },
