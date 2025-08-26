@@ -12,6 +12,7 @@ import { RightMenuComponent } from '@features/notes/components/right-menu/right-
 import { Note } from '@features/notes/interfaces/Note.interface';
 import { RightMenuOptions } from '@shared/interfaces';
 import { ActivatedRoute } from '@angular/router';
+import { HeaderControlComponent } from '@features/notes/components/header-control/header-control.component';
 
 @Component({
   selector: 'notes-tagged-notes-page',
@@ -21,6 +22,7 @@ import { ActivatedRoute } from '@angular/router';
     NotesListComponent,
     NoteDetailsComponent,
     RightMenuComponent,
+    HeaderControlComponent,
   ],
   templateUrl: './tagged-notes-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

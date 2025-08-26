@@ -24,8 +24,16 @@ export class SidebarComponent {
 
   readonly notes = input<Note[]>([]);
   readonly notesRedirectionPath = input.required<
-    'all' | 'archived' | 'tags' | 'search' | `/tags/${string}`
+    | 'all'
+    | 'archived'
+    | 'tags'
+    | 'search'
+    | `/tags/${string}`
+    | `/search/${string}`
   >();
+  readonly messageVariant = input<'archived' | 'search' | 'tags' | 'search'>();
+  readonly messageMatch = input<string>();
+
   readonly navigateToForm = signal<boolean>(false);
 
   protected readonly navigate = () => {
