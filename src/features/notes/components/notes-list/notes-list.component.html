@@ -1,5 +1,5 @@
 <ul class="flex flex-col gap-y-1 w-full h-full overflow-y-auto">
-  @for (note of notes(); track note.id) {
-    <notes-note-item [note]="note" [path]="path()" />
+  @for (note of notes(); track note.id; let isFirst = $first) {
+    <notes-note-item [note]="note" [path]="path()" [isFirstNote]="isFirst" />
   }
 </ul>
