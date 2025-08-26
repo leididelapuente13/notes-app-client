@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
 import TemporalComponentComponent from './components/temporal-component/temporal-component.component';
 import { NotesLayoutComponent } from '@shared/layouts/notes-layout/notes-layout.component';
+
 import AllNotesPageComponent from './pages/all-notes-page/all-notes-page.component';
 import ArchivedNotesPageComponent from './pages/archived-notes-page/archived-notes-page.component';
 import TaggedNotesPageComponent from './pages/tagged-notes-page/tagged-notes-page.component';
 import TagsPageComponent from './pages/tags-page/tags-page.component';
+import SearchNotesPageComponent from './pages/search-notes-page/search-notes-page.component';
 
 const notesRouter: Routes = [
   {
@@ -32,17 +34,23 @@ const notesRouter: Routes = [
         title: 'Archived',
       },
       {
-        path: 'details/:id',
-        loadComponent: () => TemporalComponentComponent,
-      },
-      {
         path: 'form',
         loadComponent: () => TemporalComponentComponent,
         title: 'All Notes',
       },
       {
         path: 'search',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => SearchNotesPageComponent,
+        title: 'Showing results for',
+      },
+      {
+        path: 'search/:query',
+        loadComponent: () => SearchNotesPageComponent,
+        title: 'Showing results for',
+      },
+      {
+        path: 'search/:query/:id',
+        loadComponent: () => SearchNotesPageComponent,
         title: 'Showing results for',
       },
       {
