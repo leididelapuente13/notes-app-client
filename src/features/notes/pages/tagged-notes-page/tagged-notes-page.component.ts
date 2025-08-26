@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { SidebarComponent } from '@features/notes/components/sidebar/sidebar.component';
 import { SectionTitleComponent } from '@shared/components';
 import { NotesListComponent } from '@features/notes/components/notes-list/notes-list.component';
@@ -67,16 +72,14 @@ class TaggedNotesPageComponent {
     },
   ];
 
-  protected getTagRouteParam() {
-    return this.activeRoute.snapshot.paramMap.get('tag') ?? undefined;
-  }
-
-  protected getNoteIdRouteParams() {
-    return this.activeRoute.snapshot.paramMap.get('id') ?? undefined;
-  }
-
-  protected getRoute() {
-    return `/tags/${this.getTagRouteParam()}` as `/tags/${string}`;
-  }
+  protected readonly tagRouteParam = computed(
+    () => this.activeRoute.snapshot.paramMap.get('tag') ?? undefined,
+  );
+  protected readonly noteIdRouteParam = computed(
+    () => this.activeRoute.snapshot.paramMap.get('id') ?? undefined,
+  );
+  protected readonly route = computed(
+    () => `/tags/${this.tagRouteParam()}` as `/tags/${string}`,
+  );
 }
 export default TaggedNotesPageComponent;
