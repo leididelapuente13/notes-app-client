@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   input,
   signal,
@@ -9,6 +10,7 @@ import { NotesListComponent } from '../notes-list/notes-list.component';
 import { ButtonComponent, MessageComponent } from '@shared/components';
 import { Note } from '@features/notes/interfaces/Note.interface';
 import { Router } from '@angular/router';
+import { TitleService } from '@core/services/title.service';
 
 @Component({
   selector: 'notes-sidebar',
@@ -18,9 +20,11 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   private readonly router = inject(Router);
+  private readonly titleService = inject(TitleService);
+
   readonly notes = input<Note[]>([]);
   readonly notesRedirectionPath = input.required<
-    'all' | 'archived' | 'tags' | 'search'
+    'all' | 'archived' | 'tags' | 'search' | `/tags/${string}`
   >();
   readonly navigateToForm = signal<boolean>(false);
 
@@ -30,4 +34,8 @@ export class SidebarComponent {
       this.navigateToForm.set(false);
     }
   };
+
+  protected readonly matchValue = computed(
+    () => this.titleService.getValues().match,
+  );
 }

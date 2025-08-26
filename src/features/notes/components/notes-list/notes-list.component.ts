@@ -10,5 +10,7 @@ import { NoteItemComponent } from './note-item/note-item.component';
 })
 export class NotesListComponent {
   readonly notes = input<Note[]>([]);
-  readonly path = input.required<'all' | 'archived' | 'tags' | 'search'>();
+  readonly path = input.required<
+    'all' | 'archived' | 'tags' | 'search' | `/tags/${string}`
+  >();
 }

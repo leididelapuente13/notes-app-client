@@ -22,7 +22,9 @@ export class NoteItemComponent implements OnInit {
   private readonly activeRoute = inject(ActivatedRoute);
 
   readonly note = input.required<Note>();
-  readonly path = input.required<'all' | 'archived' | 'tags' | 'search'>();
+  readonly path = input.required<
+    'all' | 'archived' | 'tags' | 'search' | `/tags/${string}`
+  >();
   protected readonly selectedNote = signal<string | null>(null);
   protected readonly isSelected = computed(() => {
     if (!this.selectedNote()) return false;

@@ -1,1 +1,12 @@
-<h1 class="text-preset-1 text-neutral-950 dark:text-white">{{ title() }}</h1>
+@if (match()) {
+  <h1 class="text-preset-1 text-neutral-600 dark:text-neutral-400">
+    {{ title() | titlecase }}:
+    <span class="text-neutral-950 dark:text-white">{{
+      match() | titlecase
+    }}</span>
+  </h1>
+} @else {
+  <h1 class="text-preset-1 text-neutral-950 dark:text-white">
+    {{ title() | titlecase }}
+  </h1>
+}

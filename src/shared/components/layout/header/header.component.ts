@@ -1,5 +1,11 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TitleService } from '@core/services/title.service';
 import {
   InputComponent,
   LogoComponent,
@@ -19,4 +25,10 @@ import { IconSettingsComponent } from '@shared/components/ui/icons';
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  titleService = inject(TitleService);
+
+  protected readonly titleValues = computed(() => {
+    return this.titleService.getValues();
+  });
+}

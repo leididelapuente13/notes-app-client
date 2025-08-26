@@ -2,7 +2,7 @@
   <div
     class="hidden lg:flex items-center w-full h-[81px] px-8 flex-1 lg:border-solid border-b border-neutral-200 dark:border-neutral-200/30 justify-between"
   >
-    <app-title title="Section" />
+    <app-title [title]="titleValues().title" [match]="titleValues().match" />
     <div class="flex gap-4 items-center justify-center">
       <app-input
         class="w-[300px]"
