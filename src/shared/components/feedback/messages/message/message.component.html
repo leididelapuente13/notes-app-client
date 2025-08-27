@@ -1,6 +1,10 @@
-<div class="text-preset-5 text-neutral-950 dark:text-white">
+<div class="text-preset-5 text-neutral-950 dark:text-neutral-300">
   @if (variant() !== "archived" && match()) {
-    <p>All notes matching "{{ match() }}" are displayed below.</p>
+    <p>
+      All notes matching
+      <span class="text-black dark:text-white">"{{ match() }}"</span> are
+      displayed below.
+    </p>
   }
   @if (variant() === "archived" && !match()) {
     <p>

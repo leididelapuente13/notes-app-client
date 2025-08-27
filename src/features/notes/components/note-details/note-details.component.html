@@ -4,6 +4,7 @@
   >
     <notes-header-control
       [options]="headerControlOptions()"
+      cancelOption="navigate-back"
       (optionClicked)="headerControlOptionClicked.set($event)"
       (formReset)="formReset.set($event)"
     />

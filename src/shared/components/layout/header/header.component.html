@@ -4,12 +4,7 @@
   >
     <app-title [title]="titleValues().title" [match]="titleValues().match" />
     <div class="flex gap-4 items-center justify-center">
-      <app-input
-        class="w-[300px]"
-        iconName="search"
-        name="search-query"
-        placeholder="Search by title, content, or tags…"
-      />
+      <app-search-bar (inputValue)="searchValue.set($event)" />
       <a routerLink="/settings">
         <app-icon-settings
           size="customMd"

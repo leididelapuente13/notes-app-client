@@ -6,27 +6,38 @@ import {
   signal,
   Type,
   computed,
+  output,
 } from '@angular/core';
 import { InputHintComponent } from './input-hint/input-hint.component';
 import { IconShowComponent } from '../icons/icon-show/icon-show.component';
 import { IconSearchComponent } from '../icons';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input',
-  imports: [NgComponentOutlet, TitleCasePipe, InputHintComponent],
+  imports: [
+    NgComponentOutlet,
+    TitleCasePipe,
+    InputHintComponent,
+    ReactiveFormsModule,
+  ],
   templateUrl: './input.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputComponent {
-  name = input.required<string>();
-  label = input<string>('');
-  placeholder = input.required<string>();
-  type = input<'text' | 'email' | 'number' | 'password'>('text');
-  isDisabled = input<boolean>(false);
-  isError = input<boolean>(false);
-  hintMessage = input<string>('');
-  iconName = input<'show' | 'search'>();
-  iconPlacement = input<'start' | 'end'>('start');
+  readonly name = input.required<string>();
+  readonly label = input<string>('');
+  readonly placeholder = input.required<string>();
+  readonly type = input<'text' | 'email' | 'number' | 'password'>('text');
+  readonly isDisabled = input<boolean>(false);
+  readonly isError = input<boolean>(false);
+  readonly hintMessage = input<string>('');
+  readonly iconName = input<'show' | 'search'>();
+  readonly iconPlacement = input<'start' | 'end'>('start');
+
+  protected readonly inputControl = new FormControl('', Validators.required);
+
+  value = output<string | null>();
 
   protected readonly iconMap = signal(
     new Map<string, Type<unknown>>([

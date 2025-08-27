@@ -1,4 +1,4 @@
-import { Location, NgComponentOutlet } from '@angular/common';
+import { Location, NgComponentOutlet, TitleCasePipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -8,6 +8,7 @@ import {
   signal,
   Type,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   IconDeleteComponent,
   IconArchiveComponent,
@@ -18,17 +19,20 @@ import { HeaderControlOptions } from '@shared/interfaces';
 
 @Component({
   selector: 'notes-header-control',
-  imports: [NgComponentOutlet, IconArrowLeftComponent],
+  imports: [NgComponentOutlet, TitleCasePipe, IconArrowLeftComponent],
   templateUrl: './header-control.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderControlComponent {
-  protected readonly location = inject(Location);
+  private readonly location = inject(Location);
+  private readonly router = inject(Router);
 
   readonly options = input<HeaderControlOptions[]>();
-  readonly cancelOptions = input<'navigate-back' | 'reset-form'>(
-    'navigate-back',
+  readonly cancelOption = input<'navigate-back' | 'reset-form' | undefined>(
+    undefined,
   );
+  readonly navigateTo = input<'back' | '/notes/all' | '/notes/tags'>('back');
+  readonly navigationButtonLabel = input<'all tags' | 'go back'>('go back');
 
   readonly formReset = output<boolean>();
   readonly optionClicked = output<HeaderControlOptions>();
@@ -49,8 +53,15 @@ export class HeaderControlComponent {
     this.location.back();
   }
 
+  protected handleNavigation() {
+    if (this.navigateTo() === 'back') {
+      this.goBack();
+    }
+    this.router.navigate([this.navigateTo()]);
+  }
+
   protected readonly handleCancel = () => {
-    switch (this.cancelOptions()) {
+    switch (this.cancelOption()) {
       case 'navigate-back':
         this.goBack();
         break;

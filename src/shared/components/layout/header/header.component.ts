@@ -3,15 +3,13 @@ import {
   Component,
   computed,
   inject,
+  signal,
 } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TitleService } from '@core/services/title.service';
-import {
-  InputComponent,
-  LogoComponent,
-  SectionTitleComponent,
-} from '@shared/components/ui';
+import { LogoComponent, SectionTitleComponent } from '@shared/components/ui';
 import { IconSettingsComponent } from '@shared/components/ui/icons';
+import { SearchBarComponent } from '../search-bar/search-bar.component';
 
 @Component({
   selector: 'app-header',
@@ -20,13 +18,14 @@ import { IconSettingsComponent } from '@shared/components/ui/icons';
     SectionTitleComponent,
     LogoComponent,
     IconSettingsComponent,
-    InputComponent,
+    SearchBarComponent,
   ],
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent {
   titleService = inject(TitleService);
+  protected readonly searchValue = signal<string | null>(null);
 
   protected readonly titleValues = computed(() => {
     return this.titleService.getValues();

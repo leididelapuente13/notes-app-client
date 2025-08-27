@@ -21,11 +21,18 @@ export class NoteItemComponent implements OnInit {
   private readonly route = inject(Router);
   private readonly activeRoute = inject(ActivatedRoute);
 
+  readonly isFirstNote = input<boolean>(false);
   readonly note = input.required<Note>();
   readonly path = input.required<
-    'all' | 'archived' | 'tags' | 'search' | `/tags/${string}`
+    | 'all'
+    | 'archived'
+    | 'tags'
+    | 'search'
+    | `/tags/${string}`
+    | `/search/${string}`
   >();
   protected readonly selectedNote = signal<string | null>(null);
+  private readonly isLargeScreen = signal<boolean>(false);
   protected readonly isSelected = computed(() => {
     if (!this.selectedNote()) return false;
     return this.selectedNote() === this.note().id;
@@ -35,7 +42,17 @@ export class NoteItemComponent implements OnInit {
     this.route.navigate([`/notes/${this.path()}`, this.note().id]);
   }
 
+  protected checkScreenSize() {
+    const screenWidth = window.innerWidth;
+    this.isLargeScreen.set(screenWidth >= 992);
+
+    if (this.isFirstNote() && this.isLargeScreen()) {
+      this.navigateToNoteDetails();
+    }
+  }
+
   ngOnInit() {
+    this.checkScreenSize();
     this.activeRoute.paramMap.subscribe((params) => {
       this.selectedNote.set(params.get('id'));
     });
