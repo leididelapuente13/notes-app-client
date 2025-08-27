@@ -1,6 +1,6 @@
 @if (noteIdParam() && !formVisible()) {
   <article
-    class="h-full bg-white py-5 px-6 flex flex-col gap-y-4 dark:bg-neutral-950"
+    class="h-full lg:ml-[290px] lg:mr-[258px] pb-32 xl:ml-[290px] bg-white p-4 md:px-6 md:py-5 lg:py-0 flex flex-col gap-y-4 dark:bg-neutral-950"
   >
     <notes-header-control
       [options]="headerControlOptions()"
@@ -47,7 +47,7 @@
       </div>
     </header>
     <div
-      class="text-preset-5 text-neutral-800 dark:text-neutral-100"
+      class="text-preset-5 text-neutral-800 dark:text-neutral-100 overflow-y-scroll mb-4"
       tabindex="0"
       (keydown)="showForm()"
       (click)="showForm()"

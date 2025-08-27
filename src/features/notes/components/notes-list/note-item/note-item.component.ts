@@ -18,7 +18,7 @@ import { Note } from '@features/notes/interfaces/Note.interface';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NoteItemComponent implements OnInit {
-  private readonly route = inject(Router);
+  private readonly router = inject(Router);
   private readonly activeRoute = inject(ActivatedRoute);
 
   readonly isFirstNote = input<boolean>(false);
@@ -37,16 +37,19 @@ export class NoteItemComponent implements OnInit {
     if (!this.selectedNote()) return false;
     return this.selectedNote() === this.note().id;
   });
+  private readonly isFormRoute = computed(() => {
+    return this.router.url.includes('/form');
+  });
 
   protected navigateToNoteDetails() {
-    this.route.navigate([`/notes/${this.path()}`, this.note().id]);
+    this.router.navigate([`/notes/${this.path()}`, this.note().id]);
   }
 
   protected checkScreenSize() {
     const screenWidth = window.innerWidth;
     this.isLargeScreen.set(screenWidth >= 992);
 
-    if (this.isFirstNote() && this.isLargeScreen()) {
+    if (this.isFirstNote() && this.isLargeScreen() && !this.isFormRoute()) {
       this.navigateToNoteDetails();
     }
   }

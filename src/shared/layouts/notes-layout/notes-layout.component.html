@@ -1,10 +1,12 @@
 <div class="flex h-screen bg-neutral-100 dark:bg-neutral-800">
   <app-sidebar />
+  <!-- TODO: Add variables for margis and paddings given the size of the header, sidebar, rightbar, notebar, leftbar -->
   <div class="flex flex-col flex-1 lg:ml-[var(--sidebar-width)]">
     <app-header />
-    <main class="flex-1">
+    <main class="flex-1 overflow-hidden mt-[54px] md:mt-[74px] lg:mt-[81px]">
       <router-outlet />
     </main>
     <app-bottom-navigation />
   </div>
+  <notes-add-note-button />
 </div>

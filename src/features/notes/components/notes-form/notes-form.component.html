@@ -1,17 +1,22 @@
 <form
-  class="h-full bg-white py-5 px-6 flex flex-col gap-y-4 dark:bg-neutral-950"
+  class="h-full lg:ml-[290px] lg:mr-[258px] pb-32 xl:ml-[290px] bg-white p-4 md:px-6 md:py-5 lg:py-0 flex flex-col gap-y-4 dark:bg-neutral-950"
 >
-  <notes-header-control [options]="['save']" cancelOption="reset-form" />
+  <notes-header-control
+    [options]="['save']"
+    cancelOptions="reset-form"
+    navigateTo="/notes/all"
+  />
   <header
-    class="flex flex-col gap-y-3 pb-3 md:pb-4 border-b border-neutral-200 dark:border-neutral-800"
+    class="w-full flex flex-col gap-y-3 pb-3 md:pb-4 border-b border-neutral-200 dark:border-neutral-800"
   >
     <input
       type="text"
       class="text-preset-1 text-neutral-950 dark:text-white outline-0"
-      [value]="note().title ? note().title : ''"
+      placeholder="Enter a title…"
+      [value]="note() ? note()?.title : ''"
     />
     <div
-      class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-[9px] w-fit text-preset-5 text-neutral-700 dark:text-neutral-300"
+      class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-[9px] w-full text-preset-5 text-neutral-700 dark:text-neutral-300"
     >
       <div class="flex gap-x-1.5 items-center">
         <app-icon-tag
@@ -24,9 +29,9 @@
       <div>
         <input
           type="text"
-          [value]="note().tags ? note().tags.join(', ') : ''"
+          [value]="note() ? note()?.tags?.join(', ') : ''"
           placeholder="Add tags separated by commas (e.g. Work, Planning)"
-          class="outline-0 w-full rounded-4 text-neutral-950 dark:text-white focus-within:outline outline-neutral-950 dark:outline-white"
+          class="w-full outline-0 rounded-4 text-neutral-950 dark:text-white focus-within:outline outline-neutral-950 dark:outline-white"
         />
       </div>
       <div class="flex gap-x-1.5 items-center">
@@ -38,8 +43,8 @@
         <p>Last Edited</p>
       </div>
       <div class="text-neutral-400">
-        @if (noteId()) {
-          <p>{{ note().updatedAt | date: "dd MMM y" }}</p>
+        @if (noteId() && note()) {
+          <p>{{ note()?.updatedAt | date: "dd MMM y" }}</p>
         } @else {
           <p>Not yet saved</p>
         }
@@ -51,12 +56,12 @@
   >
     <textarea
       class="resize-none w-full h-full outline-0"
-      [value]="note().content ? note().content : ''"
+      [value]="note() ? note()?.content : ''"
       placeholder="Start typing your note here…"
     ></textarea>
   </div>
   <footer
-    class="hidden lg:flex gap-x-4 border-t border-neutral-200 dark:border-neutral-800"
+    class="hidden py-4 lg:flex gap-x-4 border-t border-neutral-200 dark:border-neutral-800"
   >
     <app-button variant="primary" label="Save Note" />
     <app-button variant="secondary" label="Cancel" />

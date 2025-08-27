@@ -1,6 +1,6 @@
-<header class="dark:bg-neutral-950">
+<header>
   <div
-    class="hidden lg:flex items-center w-full h-[81px] px-8 flex-1 lg:border-solid border-b border-neutral-200 dark:border-neutral-200/30 justify-between"
+    class="bg-white dark:bg-neutral-950 hidden fixed left-(--sidebar-width) right-0 z-50 lg:flex items-center h-[81px] px-8 flex-1 lg:border-solid border-b border-neutral-200 dark:border-neutral-200/30 justify-between"
   >
     <app-title [title]="titleValues().title" [match]="titleValues().match" />
     <div class="flex gap-4 items-center justify-center">
@@ -15,7 +15,7 @@
     </div>
   </div>
   <div
-    class="bg-neutral-100 max-h-[54px] md:max-h-[74px] dark:bg-neutral-800 py-[13px] px-4 md:py-[23px] md:px-8 lg:hidden"
+    class="bg-neutral-100 fixed top-0 w-full max-h-[54px] md:max-h-[74px] dark:bg-neutral-800 py-[13px] px-4 md:py-[23px] md:px-8 lg:hidden"
   >
     <app-logo />
   </div>
