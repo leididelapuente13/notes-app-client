@@ -1,4 +1,4 @@
-<ul class="flex flex-col gap-y-1 w-full h-full overflow-y-auto">
+<ul class="flex flex-col gap-y-1 w-full h-full overflow-y-auto pb-24 lg:mb-0">
   @for (note of notes(); track note.id; let isFirst = $first) {
     <notes-note-item [note]="note" [path]="path()" [isFirstNote]="isFirst" />
   }
