@@ -20,7 +20,7 @@ import { RightMenuOptions } from '@shared/interfaces';
   templateUrl: './all-notes-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class AllNotesPageComponent {
+export default class AllNotesPageComponent {
   private readonly activeRoute = inject(ActivatedRoute);
 
   protected menuControlOptions: RightMenuOptions[] = ['delete', 'archive'];
@@ -71,4 +71,3 @@ class AllNotesPageComponent {
     return this.activeRoute.snapshot.paramMap.get('id') ?? undefined;
   }
 }
-export default AllNotesPageComponent;

@@ -56,6 +56,7 @@ export class HeaderControlComponent {
   protected handleNavigation() {
     if (this.navigateTo() === 'back') {
       this.goBack();
+      return;
     }
     this.router.navigate([this.navigateTo()]);
   }

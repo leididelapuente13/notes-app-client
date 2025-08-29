@@ -29,7 +29,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './search-notes-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class SearchNotesPageComponent {
+export default class SearchNotesPageComponent {
   private readonly activeRoute = inject(ActivatedRoute);
 
   protected readonly inputValue = signal<string | null>(null);
@@ -77,4 +77,3 @@ class SearchNotesPageComponent {
     () => `/search/${this.searchQueryParam()}` as `/search/${string}`,
   );
 }
-export default SearchNotesPageComponent;

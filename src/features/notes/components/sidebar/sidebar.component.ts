@@ -4,7 +4,6 @@ import {
   computed,
   inject,
   input,
-  signal,
 } from '@angular/core';
 import { NotesListComponent } from '../notes-list/notes-list.component';
 import { ButtonComponent, MessageComponent } from '@shared/components';
@@ -34,12 +33,9 @@ export class SidebarComponent {
   readonly messageVariant = input<'archived' | 'search' | 'tags' | 'search'>();
   readonly messageMatch = input<string>();
 
-  readonly navigateToForm = signal<boolean>(false);
-
-  protected readonly navigate = () => {
-    if (this.navigateToForm()) {
-      this.router.navigate(['/notes/new']);
-      this.navigateToForm.set(false);
+  protected navigate = (clicked: boolean) => {
+    if (clicked) {
+      this.router.navigate(['/notes/form']);
     }
   };
 

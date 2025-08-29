@@ -29,14 +29,7 @@ export class NotesFormComponent {
   readonly noteId = input<string>();
 
   readonly resetForm = input<boolean>(false);
-  readonly note = signal<Note>({
-    id: '2',
-    title: 'Angular Signals',
-    tags: ['angular', 'signals'],
-    updatedAt: new Date('2024-06-02T09:30:00Z'),
-    content: 'Exploring the new signals API in Angular 20.',
-    archived: false,
-  });
+  readonly note = signal<Note | undefined>(undefined);
 
   protected getNoteData() {
     if (!this.noteId()) return;

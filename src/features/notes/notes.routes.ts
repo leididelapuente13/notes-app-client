@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import TemporalComponentComponent from './components/temporal-component/temporal-component.component';
 import { NotesLayoutComponent } from '@shared/layouts/notes-layout/notes-layout.component';
 
 import AllNotesPageComponent from './pages/all-notes-page/all-notes-page.component';
@@ -7,6 +6,7 @@ import ArchivedNotesPageComponent from './pages/archived-notes-page/archived-not
 import TaggedNotesPageComponent from './pages/tagged-notes-page/tagged-notes-page.component';
 import TagsPageComponent from './pages/tags-page/tags-page.component';
 import SearchNotesPageComponent from './pages/search-notes-page/search-notes-page.component';
+import FormNotesPageComponent from './pages/form-notes-page/form-notes-page.component';
 
 const notesRouter: Routes = [
   {
@@ -35,7 +35,7 @@ const notesRouter: Routes = [
       },
       {
         path: 'form',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => FormNotesPageComponent,
         title: 'All Notes',
       },
       {
