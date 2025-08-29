@@ -26,4 +26,12 @@ export class SettingsSelectionCardComponent<T> {
   protected changeOption(): void {
     this.selectedOption.emit(this.selection().value);
   }
+
+  protected readonly selectionRadioClasses = computed(() => {
+    const baseClasses = 'bg-white rounded-full h-4 w-4';
+    const activeClasses = 'border-4 dark:bg-neutral-800 border-blue-500';
+    const unactiveClasses =
+      'border-2 dark:bg-black border-neutral-200 dark:border-neutral-600';
+    return `${baseClasses} ${this.isSelected() ? activeClasses : unactiveClasses}`;
+  });
 }

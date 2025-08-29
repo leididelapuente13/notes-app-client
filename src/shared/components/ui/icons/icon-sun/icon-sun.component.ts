@@ -16,8 +16,8 @@ import { getIconSize, getIconStrokeColor } from '@shared/utils';
 export class IconSunComponent {
   active = input<boolean>(false);
 
-  lightVariant = input<IconColorVariants>('neutral-700');
-  darkVariant = input<IconColorVariants>('neutral-200');
+  lightVariant = input<IconColorVariants>('neutral-950');
+  darkVariant = input<IconColorVariants>('white');
 
   lightActiveVariant = input<IconColorVariants>('neutral-950');
   darkActiveVariant = input<IconColorVariants>('active');
