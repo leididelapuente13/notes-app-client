@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  computed,
   inject,
   signal,
 } from '@angular/core';
@@ -12,6 +13,7 @@ import {
 } from '@shared/components';
 import { SettingsSidebarComponent } from '@features/settings/components';
 import { filter } from 'rxjs';
+import { FontService } from '@features/settings/services/font.service';
 
 @Component({
   selector: 'app-settings-layout',
@@ -27,12 +29,23 @@ import { filter } from 'rxjs';
 })
 export class SettingsLayoutComponent {
   private readonly router = inject(Router);
-
+  private readonly fontService = inject(FontService);
   protected readonly currentRoute = signal(this.router.url);
 
   constructor() {
     this.handleRouteChanges();
   }
+
+  protected readonly getFontClass = computed(() => {
+    switch (this.fontService.font()) {
+      case 'mono':
+        return 'font-mono';
+      case 'sans':
+        return 'font-sans';
+      case 'serif':
+        return 'font-serif';
+    }
+  });
 
   private handleRouteChanges() {
     this.router.events

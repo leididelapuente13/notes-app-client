@@ -1,6 +1,7 @@
-<div class="flex h-screen bg-neutral-100 dark:bg-neutral-800">
+<div
+  [class]="`flex h-screen bg-neutral-100 dark:bg-neutral-800 ${getFontClass()}`"
+>
   <app-sidebar />
-  <!-- TODO: Add variables for margis and paddings given the size of the header, sidebar, rightbar, notebar, leftbar -->
   <div class="flex flex-col flex-1 lg:ml-[var(--sidebar-width)]">
     <app-header />
     <main
