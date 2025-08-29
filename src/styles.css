@@ -96,6 +96,17 @@
   --shadow-large: 0px 8px 24px 0px rgba(16, 24, 40, 0.18);
 
   --sidebar-width: 272px;
+  --right-menu-width: 258px;
+  --notes-sidebar-width: 290px;
+
+  --header-height-sm: 54px;
+  --header-height-md: 74px;
+  --header-height-lg: 81px;
+
+  --bottom-nav-height: 74px;
+
+  --bottom-nav-size-sm: 84px;
+  --bottom-nav-size-md: 106px;
 }
 
 @font-face {

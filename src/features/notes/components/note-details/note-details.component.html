@@ -1,6 +1,6 @@
 @if (noteIdParam() && !formVisible()) {
   <article
-    class="h-full lg:ml-[290px] lg:mr-[258px] pb-32 xl:ml-[290px] bg-white p-4 md:px-6 md:py-5 lg:py-0 flex flex-col gap-y-4 dark:bg-neutral-950"
+    class="bg-white h-full p-4 pb-32 flex flex-col gap-y-4 dark:bg-neutral-950 lg:py-0 md:px-6 md:py-5 lg:ml-[var(--notes-sidebar-width)] lg:mr-[var(--right-menu-width)]"
   >
     <notes-header-control
       [options]="headerControlOptions()"
@@ -58,5 +58,9 @@
 }
 
 @if (noteIdParam() && formVisible()) {
-  <notes-form [noteId]="noteIdParam()" [resetForm]="formReset()" />
+  <div
+    class="lg:ml-[var(--notes-sidebar-width)] lg:mr-[var(--right-menu-width)] h-full"
+  >
+    <notes-form [noteId]="noteIdParam()" [resetForm]="formReset()" />
+  </div>
 }

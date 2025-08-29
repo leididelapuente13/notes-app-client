@@ -1,9 +1,9 @@
 <div class="flex flex-1 h-full min-h-0">
   <notes-sidebar [notes]="notes()" notesRedirectionPath="all" />
   <section
-    class="flex-1 rounded-t-12 lg:rounded-t-0 lg:w-[588px] xl:w-[40%] flex flex-col min-h-0 bg-white dark:bg-neutral-950"
+    class="flex-1 rounded-t-12 lg:rounded-t-0 lg:w-full xl:w-[40%] flex flex-col min-h-0 bg-white dark:bg-neutral-950"
   >
-    <div class="flex-1">
+    <div class="flex-1 lg:ml-[var(--notes-sidebar-width)] lg:mr-[200px]">
       <notes-form />
     </div>
   </section>
