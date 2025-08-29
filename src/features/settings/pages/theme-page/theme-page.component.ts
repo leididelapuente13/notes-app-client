@@ -26,7 +26,7 @@ import { ThemeService } from '@features/settings/services/theme.service';
   templateUrl: './theme-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class ThemePageComponent {
+export default class ThemePageComponent {
   themeService = inject(ThemeService);
   themeSelectionComponent = new SettingsSelectionComponent<Themes>();
   currentTheme = computed(() => this.themeService.getTheme());
@@ -69,4 +69,3 @@ class ThemePageComponent {
     this.themeService.updateTheme(this.themeSelection() ?? 'system');
   };
 }
-export default ThemePageComponent;
