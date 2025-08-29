@@ -21,11 +21,12 @@ export class AddNoteButtonComponent implements OnInit {
   protected readonly isFormPage = signal<boolean>(false);
 
   ngOnInit(): void {
+    this.isFormPage.set(this.router.url.includes('/notes/form'));
+    
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
         this.isFormPage.set(event.url.includes('/notes/form'));
       });
-    this.isFormPage.set(false);
   }
 }
