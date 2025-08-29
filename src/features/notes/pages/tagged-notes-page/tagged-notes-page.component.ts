@@ -27,7 +27,7 @@ import { HeaderControlComponent } from '@features/notes/components/header-contro
   templateUrl: './tagged-notes-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class TaggedNotesPageComponent {
+export default class TaggedNotesPageComponent {
   private readonly activeRoute = inject(ActivatedRoute);
 
   protected menuControlOptions: RightMenuOptions[] = ['delete', 'archive'];
@@ -84,4 +84,3 @@ class TaggedNotesPageComponent {
     () => `/tags/${this.tagRouteParam()}` as `/tags/${string}`,
   );
 }
-export default TaggedNotesPageComponent;

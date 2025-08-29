@@ -9,7 +9,7 @@ import { NotesFormComponent } from '@features/notes/components/notes-form/notes-
   templateUrl: './form-notes-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class FormNotesPageComponent {
+export default class FormNotesPageComponent {
   protected readonly notes = signal<Note[]>([
     {
       id: '1',
@@ -40,4 +40,3 @@ class FormNotesPageComponent {
     },
   ]);
 }
-export default FormNotesPageComponent;

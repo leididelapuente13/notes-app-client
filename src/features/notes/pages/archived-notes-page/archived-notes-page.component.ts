@@ -21,7 +21,7 @@ import { RightMenuOptions } from '@shared/interfaces';
   templateUrl: './archived-notes-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class ArchivedNotesPageComponent {
+export default class ArchivedNotesPageComponent {
   private readonly activeRoute = inject(ActivatedRoute);
 
   protected menuControlOptions: RightMenuOptions[] = ['delete', 'restore'];
@@ -72,4 +72,3 @@ class ArchivedNotesPageComponent {
     return this.activeRoute.snapshot.paramMap.get('id') ?? undefined;
   }
 }
-export default ArchivedNotesPageComponent;

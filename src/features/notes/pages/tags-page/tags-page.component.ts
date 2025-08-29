@@ -8,5 +8,4 @@ import { SectionTitleComponent } from '@shared/components';
   templateUrl: './tags-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-class TagsPageComponent {}
-export default TagsPageComponent;
+export default class TagsPageComponent {}

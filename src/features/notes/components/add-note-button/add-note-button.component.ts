@@ -18,11 +18,11 @@ import { filter } from 'rxjs';
 export class AddNoteButtonComponent implements OnInit {
   private readonly router = inject(Router);
 
-  protected readonly isFormPage = signal<boolean>(false);
+  protected readonly isFormPage = signal<boolean>(
+    this.router.url.includes('/notes/form'),
+  );
 
   ngOnInit(): void {
-    this.isFormPage.set(this.router.url.includes('/notes/form'));
-    
     this.router.events
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((event: NavigationEnd) => {
