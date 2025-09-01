@@ -10,8 +10,8 @@ import {
   IconTagComponent,
   IconClockComponent,
   ButtonComponent,
+  HeaderControlComponent,
 } from '@shared/components';
-import { HeaderControlComponent } from '../header-control/header-control.component';
 
 @Component({
   selector: 'notes-form',

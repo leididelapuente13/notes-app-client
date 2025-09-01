@@ -13,10 +13,10 @@ import {
   IconTagComponent,
   IconClockComponent,
   SectionTitleComponent,
+  HeaderControlComponent,
 } from '@shared/components';
 import { NotesFormComponent } from '../notes-form/notes-form.component';
 import { HeaderControlOptions } from '@shared/interfaces';
-import { HeaderControlComponent } from '../header-control/header-control.component';
 
 @Component({
   selector: 'notes-note-details',

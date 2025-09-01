@@ -4,15 +4,19 @@ import {
   computed,
   inject,
 } from '@angular/core';
-import { SidebarComponent } from '@features/notes/components/sidebar/sidebar.component';
-import { SectionTitleComponent } from '@shared/components';
-import { NotesListComponent } from '@features/notes/components/notes-list/notes-list.component';
-import { NoteDetailsComponent } from '@features/notes/components/note-details/note-details.component';
-import { RightMenuComponent } from '@features/notes/components/right-menu/right-menu.component';
-import { Note } from '@features/notes/interfaces/Note.interface';
-import { RightMenuOptions } from '@shared/interfaces';
 import { ActivatedRoute } from '@angular/router';
-import { HeaderControlComponent } from '@features/notes/components/header-control/header-control.component';
+import {
+  HeaderControlComponent,
+  SectionTitleComponent,
+} from '@shared/components';
+import { RightMenuOptions } from '@shared/interfaces';
+import { Note } from '@features/notes/interfaces';
+import {
+  NoteDetailsComponent,
+  NotesListComponent,
+  RightMenuComponent,
+  SidebarComponent,
+} from '@features/notes/components';
 
 @Component({
   selector: 'notes-tagged-notes-page',

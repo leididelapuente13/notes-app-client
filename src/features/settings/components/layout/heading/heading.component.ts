@@ -8,5 +8,5 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class HeadingComponent {
   title = input.required<string>();
-  description = input.required<string>();
+  description = input<string>();
 }

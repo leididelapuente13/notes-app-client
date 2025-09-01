@@ -16,12 +16,18 @@ import {
   IconFontMonoComponent,
   IconFontSansComponent,
   IconFontSerifComponent,
+  HeaderControlComponent,
 } from '@shared/components';
 import { Selection } from '@shared/interfaces';
 
 @Component({
   selector: 'app-font-page',
-  imports: [HeadingComponent, SettingsSelectionComponent, ButtonComponent],
+  imports: [
+    HeadingComponent,
+    SettingsSelectionComponent,
+    ButtonComponent,
+    HeaderControlComponent,
+  ],
   templateUrl: './font-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
