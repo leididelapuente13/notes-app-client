@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { IconInfoComponent } from '../../icons/icon-info/icon-info.component';
+import { IconInfoComponent } from '../../icons';
 
 @Component({
   selector: 'app-input-hint',

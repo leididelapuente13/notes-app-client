@@ -16,7 +16,7 @@ import { getIconFillColor, getIconSize } from '@shared/utils';
 export class IconFontSerifComponent {
   active = input<boolean>(false);
 
-  lightVariant = input<IconColorVariants>('black');
+  lightVariant = input<IconColorVariants>('neutral-950');
   darkVariant = input<IconColorVariants>('white');
 
   lightActiveVariant = input<IconColorVariants>('active');

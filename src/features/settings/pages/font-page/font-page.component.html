@@ -1,18 +1,15 @@
 <article class="flex flex-col gap-y-6 lg:max-w-[528px]">
-  <settings-heading
-    title="Color Theme"
-    description="Choose your color theme:"
-  />
+  <settings-heading title="Font Theme" description="Choose your font theme:" />
   <settings-selection
     [selections]="selections"
-    (selectedOption)="updateThemeSelection($event)"
-    [currentSelection]="currentTheme()"
+    (selectedOption)="updateFontSelection($event)"
+    [currentSelection]="currentFont()"
   />
   <div class="w-full flex justify-end">
     <app-button
       variant="primary"
       label="Apply Changes"
-      (clicked)="clickedUpdateTheme.set($event)"
+      (clicked)="handleUpdateFont($event)"
     />
   </div>
 </article>

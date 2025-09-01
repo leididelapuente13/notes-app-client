@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {
   BottomNavigationComponent,
@@ -6,6 +11,7 @@ import {
   SidebarComponent,
 } from '@shared/components';
 import { AddNoteButtonComponent } from '@features/notes/components/add-note-button/add-note-button.component';
+import { FontService } from '@features/settings/services/font.service';
 
 @Component({
   selector: 'app-notes-layout',
@@ -19,4 +25,10 @@ import { AddNoteButtonComponent } from '@features/notes/components/add-note-butt
   templateUrl: './notes-layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotesLayoutComponent {}
+export class NotesLayoutComponent {
+  private readonly fontService = inject(FontService);
+
+  protected readonly fontClass = computed(() =>
+    this.fontService.getFontClass(this.fontService.font()),
+  );
+}
