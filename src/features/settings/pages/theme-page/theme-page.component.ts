@@ -11,14 +11,24 @@ import {
   SettingsSelectionComponent,
 } from '@features/settings/components';
 import { Themes } from '@features/settings/types';
-import { IconMoonComponent, IconSunComponent, IconSystemComponent, HeaderControlComponent } from '@shared/components';
+import {
+  IconMoonComponent,
+  IconSunComponent,
+  IconSystemComponent,
+  HeaderControlComponent,
+} from '@shared/components';
 import { Selection } from '@shared/interfaces';
 import { ButtonComponent } from '@shared/components/ui';
 import { ThemeService } from '@features/settings/services/theme.service';
 
 @Component({
   selector: 'settings-theme-page',
-  imports: [HeadingComponent, SettingsSelectionComponent, ButtonComponent, HeaderControlComponent],
+  imports: [
+    HeadingComponent,
+    SettingsSelectionComponent,
+    ButtonComponent,
+    HeaderControlComponent,
+  ],
   templateUrl: './theme-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
