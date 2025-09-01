@@ -1,5 +1,9 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { ButtonComponent, InputComponent, HeaderControlComponent } from '@shared/components';
+import {
+  ButtonComponent,
+  InputComponent,
+  HeaderControlComponent,
+} from '@shared/components';
 import { HeadingComponent } from '@features/settings/components';
 
 @Component({
