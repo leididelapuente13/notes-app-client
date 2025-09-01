@@ -27,7 +27,7 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 export class InputComponent {
   readonly name = input.required<string>();
   readonly label = input<string>('');
-  readonly placeholder = input.required<string>();
+  readonly placeholder = input<string>('');
   readonly type = input<'text' | 'email' | 'number' | 'password'>('text');
   readonly isDisabled = input<boolean>(false);
   readonly isError = input<boolean>(false);
