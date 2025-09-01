@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect,
   inject,
   signal,
 } from '@angular/core';
@@ -31,7 +30,6 @@ export default class FontPageComponent {
 
   private readonly fontService = inject(FontService);
 
-  protected readonly clickedUpdateFont = signal<boolean>(false);
   protected readonly currentFont = computed(() => this.fontService.getFont());
   protected readonly fontSelection = signal<Fonts>(this.currentFont());
 
@@ -56,12 +54,11 @@ export default class FontPageComponent {
     },
   ];
 
-  private readonly updateFontEffect = effect(() => {
-    if (this.clickedUpdateFont()) {
+  handleUpdateFont(value: boolean) {
+    if (value) {
       this.updateFont();
-      this.clickedUpdateFont.set(false);
     }
-  });
+  }
 
   updateFontSelection = (value: Fonts | null) => {
     if (!value) return;
