@@ -28,14 +28,7 @@ import { FontService } from '@features/settings/services/font.service';
 export class NotesLayoutComponent {
   private readonly fontService = inject(FontService);
 
-  protected readonly getFontClass = computed(() => {
-    switch (this.fontService.font()) {
-      case 'mono':
-        return 'font-mono';
-      case 'sans':
-        return 'font-sans';
-      case 'serif':
-        return 'font-serif';
-    }
-  });
+  protected readonly fontClass = computed(() =>
+    this.fontService.getFontClass(this.fontService.font()),
+  );
 }

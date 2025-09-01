@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { Fonts } from '../types';
+import { Fonts, FontsClasses } from '../types';
 
 @Injectable({
   providedIn: 'root',
@@ -31,5 +31,16 @@ export class FontService {
 
   public get font() {
     return this._font.asReadonly();
+  }
+
+  public getFontClass(font: Fonts): FontsClasses {
+    switch (font) {
+      case 'mono':
+        return 'font-mono';
+      case 'sans':
+        return 'font-sans';
+      case 'serif':
+        return 'font-serif';
+    }
   }
 }
