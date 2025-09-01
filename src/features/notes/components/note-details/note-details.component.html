@@ -2,7 +2,7 @@
   <article
     class="bg-white h-full p-4 pb-32 flex flex-col gap-y-4 dark:bg-neutral-950 lg:py-0 md:px-6 md:py-5 lg:ml-[var(--notes-sidebar-width)] lg:mr-[var(--right-menu-width)]"
   >
-    <notes-header-control
+    <app-header-control
       [options]="headerControlOptions()"
       cancelOption="navigate-back"
       (optionClicked)="headerControlOptionClicked.set($event)"

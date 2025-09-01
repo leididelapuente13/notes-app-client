@@ -1,5 +1,10 @@
 <header
-  class="flex justify-between items-center text-preset-5 pb-3 border-b border-neutral-200 dark:border-neutral-800 md:py-4 lg:hidden"
+  class="flex justify-between items-center text-preset-5 pb-3 md:py-4 lg:hidden"
+  [class]="
+    borderBottom()
+      ? 'border-b border-neutral-200 dark:border-neutral-800'
+      : 'border-0'
+  "
 >
   <button
     class="flex gap-x-1 items-center text-neutral-600 dark:text-neutral-300"

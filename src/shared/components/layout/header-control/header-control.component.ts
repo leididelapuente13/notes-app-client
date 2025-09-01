@@ -18,7 +18,7 @@ import {
 import { HeaderControlOptions } from '@shared/interfaces';
 
 @Component({
-  selector: 'notes-header-control',
+  selector: 'app-header-control',
   imports: [NgComponentOutlet, TitleCasePipe, IconArrowLeftComponent],
   templateUrl: './header-control.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -31,8 +31,13 @@ export class HeaderControlComponent {
   readonly cancelOption = input<'navigate-back' | 'reset-form' | undefined>(
     undefined,
   );
-  readonly navigateTo = input<'back' | '/notes/all' | '/notes/tags'>('back');
-  readonly navigationButtonLabel = input<'all tags' | 'go back'>('go back');
+  readonly navigateTo = input<
+    'back' | '/notes/all' | '/notes/tags' | '/settings'
+  >('back');
+  readonly navigationButtonLabel = input<'all tags' | 'go back' | 'settings'>(
+    'go back',
+  );
+  readonly borderBottom = input<boolean>(true);
 
   readonly formReset = output<boolean>();
   readonly optionClicked = output<HeaderControlOptions>();
