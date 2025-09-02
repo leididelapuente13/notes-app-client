@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
 import TemporalComponentComponent from '@features/notes/components/temporal-component/temporal-component.component';
-import { NotesLayoutComponent } from '@shared/layouts/notes-layout/notes-layout.component';
+import { AuthLayoutComponent } from '@shared/layouts/auth-layout/auth-layout.component';
 
 const authRoutes: Routes = [
   {
     path: 'auth',
-    // TODO: Replace for auth layout
-    component: NotesLayoutComponent,
+    component: AuthLayoutComponent,
     children: [
       {
         path: 'login',
