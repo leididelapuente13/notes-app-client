@@ -1,55 +1,62 @@
 <div class="flex flex-col gap-1.5">
-  <label
-    [htmlFor]="name()"
-    class="text-preset-4 text-neutral-950 dark:text-white"
-  >
+  <div class="flex justify-between">
     @if (label()) {
-      <span>
+      <label
+        class="text-preset-4 text-neutral-950 dark:text-white"
+        [htmlFor]="name()"
+      >
         {{ label() | titlecase }}
-      </span>
+      </label>
     }
-    <div
-      [class]="inputClasses()"
-      [class.justify-between]="iconPlacement() === 'end'"
-    >
-      @if (currentIcon() && iconPlacement() === "start") {
-        <ng-container
-          [ngComponentOutlet]="currentIcon()"
-          [ngComponentOutletInputs]="{
-            size: 'md',
-            lightVariant: 'neutral-500',
-            darkVariant: 'neutral-400',
-          }"
-        ></ng-container>
-      }
-      <input
-        [type]="type()"
-        [id]="name()"
-        [name]="name()"
-        class="grow py-3 outline-0 text-preset-5 text-neutral-950 dark:text-white"
-        [class]="
-          isDisabled()
-            ? 'placeholder:text-neutral-300'
-            : 'placeholder:text-neutral-500'
-        "
-        [placeholder]="placeholder()"
-        [disabled]="isDisabled()"
-        [formControl]="inputControl"
-        (change)="value.emit(inputControl.value)"
-      />
-      @if (currentIcon() && iconPlacement() === "end") {
-        <ng-container
-          [ngComponentOutlet]="currentIcon()"
-          [ngComponentOutletInputs]="{
-            size: 'md',
-            lightVariant: 'neutral-500',
-            darkVariant: 'neutral-400',
-          }"
-        >
-        </ng-container>
-      }
-    </div>
-  </label>
+    @if (redirectionPath() && redirectionLabel()) {
+      <a
+        class="text-preset-6 text-neutral-400 underline"
+        [routerLink]="redirectionPath()"
+        >{{ redirectionLabel() }}
+      </a>
+    }
+  </div>
+  <div
+    [class]="inputClasses()"
+    [class.justify-between]="iconPlacement() === 'end'"
+  >
+    @if (currentIcon() && iconPlacement() === "start") {
+      <ng-container
+        [ngComponentOutlet]="currentIcon()"
+        [ngComponentOutletInputs]="{
+          size: 'md',
+          lightVariant: 'neutral-500',
+          darkVariant: 'neutral-400',
+        }"
+      ></ng-container>
+    }
+    <input
+      [type]="type()"
+      [id]="name()"
+      [name]="name()"
+      class="grow py-3 outline-0 text-preset-5 text-neutral-950 dark:text-white"
+      [class]="
+        isDisabled()
+          ? 'placeholder:text-neutral-300'
+          : 'placeholder:text-neutral-500'
+      "
+      [placeholder]="placeholder()"
+      [disabled]="isDisabled()"
+      [formControl]="inputControl"
+      (change)="value.emit(inputControl.value)"
+    />
+    @if (currentIcon() && iconPlacement() === "end") {
+      <ng-container
+        [ngComponentOutlet]="currentIcon()"
+        [ngComponentOutletInputs]="{
+          size: 'md',
+          lightVariant: 'neutral-500',
+          darkVariant: 'neutral-400',
+        }"
+      >
+      </ng-container>
+    }
+  </div>
   @if (hintMessage()) {
     <app-input-hint
       [message]="hintMessage()"
