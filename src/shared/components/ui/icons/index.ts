@@ -25,3 +25,4 @@ export * from './icon-show/icon-show.component';
 export * from './icon-sun/icon-sun.component';
 export * from './icon-system/icon-system.component';
 export * from './icon-tag/icon-tag.component';
+export * from './icon-google/icon-google.component';

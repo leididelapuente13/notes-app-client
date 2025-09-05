@@ -12,6 +12,7 @@ import { InputHintComponent } from './input-hint/input-hint.component';
 import { IconShowComponent } from '../icons/icon-show/icon-show.component';
 import { IconSearchComponent } from '../icons';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-input',
@@ -20,6 +21,7 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
     TitleCasePipe,
     InputHintComponent,
     ReactiveFormsModule,
+    RouterLink,
   ],
   templateUrl: './input.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -34,6 +36,12 @@ export class InputComponent {
   readonly hintMessage = input<string>('');
   readonly iconName = input<'show' | 'search'>();
   readonly iconPlacement = input<'start' | 'end'>('start');
+  readonly redirectionPath = input<
+    '/auth/forgot-password' | '/auth/register' | undefined
+  >(undefined);
+  readonly redirectionLabel = input<'Forgot' | 'Register' | undefined>(
+    undefined,
+  );
 
   protected readonly inputControl = new FormControl('', Validators.required);
 
