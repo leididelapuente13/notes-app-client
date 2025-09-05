@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import TemporalComponentComponent from '@features/notes/components/temporal-component/temporal-component.component';
 import { AuthLayoutComponent } from '@shared/layouts/auth-layout/auth-layout.component';
 import LoginPageComponent from './pages/login-page/login-page.component';
 import SignupPageComponent from './pages/signup-page/signup-page.component';
-import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
+import ForgotPasswordPageComponent from './pages/forgot-password-page/forgot-password-page.component';
+import ResetPasswordPageComponent from './pages/reset-password-page/reset-password-page.component';
 
 const authRoutes: Routes = [
   {
@@ -24,7 +24,7 @@ const authRoutes: Routes = [
       },
       {
         path: 'reset-password',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => ResetPasswordPageComponent,
       },
     ],
   },

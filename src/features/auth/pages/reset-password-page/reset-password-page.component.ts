@@ -1,20 +1,20 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import {
   SectionTitleComponent,
+  LogoComponent,
   InputComponent,
   ButtonComponent,
-  LogoComponent,
 } from '@shared/components';
 
 @Component({
-  selector: 'auth-forgot-password-page',
+  selector: 'auth-reset-password-page',
   imports: [
     SectionTitleComponent,
+    LogoComponent,
     InputComponent,
     ButtonComponent,
-    LogoComponent,
   ],
-  templateUrl: './forgot-password-page.component.html',
+  templateUrl: './reset-password-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class ForgotPasswordPageComponent {}
+export default class ResetPasswordPageComponent {}
