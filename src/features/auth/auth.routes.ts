@@ -3,6 +3,7 @@ import TemporalComponentComponent from '@features/notes/components/temporal-comp
 import { AuthLayoutComponent } from '@shared/layouts/auth-layout/auth-layout.component';
 import LoginPageComponent from './pages/login-page/login-page.component';
 import SignupPageComponent from './pages/signup-page/signup-page.component';
+import { ForgotPasswordPageComponent } from './pages/forgot-password-page/forgot-password-page.component';
 
 const authRoutes: Routes = [
   {
@@ -19,7 +20,7 @@ const authRoutes: Routes = [
       },
       {
         path: 'forgot-password',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => ForgotPasswordPageComponent,
       },
       {
         path: 'reset-password',
