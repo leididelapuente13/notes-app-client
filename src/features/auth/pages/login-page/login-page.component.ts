@@ -9,7 +9,7 @@ import {
 } from '@shared/components';
 
 @Component({
-  selector: 'app-login-page',
+  selector: 'auth-login-page',
   imports: [
     LogoComponent,
     SectionTitleComponent,

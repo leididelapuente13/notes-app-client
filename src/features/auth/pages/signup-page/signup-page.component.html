@@ -7,9 +7,9 @@
     >
       <app-logo />
       <div>
-        <app-title title="Welcome to Note" />
+        <app-title title="Create Your Account" />
         <p class="text-preset-5 text-neutral-600 dark:text-neutral-300 mt-2">
-          Please log in to continue
+          Sign up to start organizing your notes and boost your productivity.
         </p>
       </div>
     </header>
@@ -25,8 +25,7 @@
         placeholder="Enter your password"
         iconName="show"
         iconPlacement="end"
-        redirectionPath="/auth/forgot-password"
-        redirectionLabel="Forgot"
+        hintMessage="At least 8 characters"
       />
       <app-button variant="primary" label="Login" />
     </form>
@@ -38,11 +37,11 @@
       <div
         class="border-t border-solid border-neutral-200 dark:border-neutral-800 pt-4"
       >
-        No account yet?
+        Already have an account?
         <a
-          routerLink="/auth/signup"
-          class="dark:text-white hover:text-blue-500 hover:cursor-pointe"
-          >Sign Up</a
+          routerLink="/auth/login"
+          class="dark:text-white hover:text-blue-500 hover:cursor-pointer"
+          >Login</a
         >
       </div>
     </footer>
