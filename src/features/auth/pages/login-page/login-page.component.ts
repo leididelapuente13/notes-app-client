@@ -16,6 +16,7 @@ import {
     InputComponent,
     ButtonComponent,
     RouterLink,
+    IconGoogleComponent,
   ],
   templateUrl: './login-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
