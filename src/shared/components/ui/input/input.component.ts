@@ -37,7 +37,7 @@ export class InputComponent {
   readonly iconName = input<'show' | 'search'>();
   readonly iconPlacement = input<'start' | 'end'>('start');
   readonly redirectionPath = input<
-    '/auth/forgot-password' | '/auth/register' | undefined
+    '/auth/forgot-password' | '/auth/signup' | undefined
   >(undefined);
   readonly redirectionLabel = input<'Forgot' | 'Register' | undefined>(
     undefined,

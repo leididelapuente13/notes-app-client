@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import TemporalComponentComponent from '@features/notes/components/temporal-component/temporal-component.component';
 import { AuthLayoutComponent } from '@shared/layouts/auth-layout/auth-layout.component';
 import LoginPageComponent from './pages/login-page/login-page.component';
+import SignupPageComponent from './pages/signup-page/signup-page.component';
 
 const authRoutes: Routes = [
   {
@@ -14,7 +15,7 @@ const authRoutes: Routes = [
       },
       {
         path: 'signup',
-        loadComponent: () => TemporalComponentComponent,
+        loadComponent: () => SignupPageComponent,
       },
       {
         path: 'forgot-password',
